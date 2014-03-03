@@ -31,7 +31,7 @@ library/custom-post-type.php
 	- example custom taxonomy (like tags)
 */
 require_once(get_template_directory().'/library/custom-post-type-accordion.php'); // you can disable this if you like
-require_once(get_template_directory().'/library/custom-post-type.php'); // you can disable this if you like
+require_once(get_template_directory().'/library/film-custom-post-type.php'); // you can disable this if you like
 /*
 library/admin.php
 	- removing some default WordPress dashboard widgets
@@ -92,7 +92,7 @@ function joints_main_nav() {
     	'container' => false,                           // remove nav container
     	'container_class' => '',           // class of container (should you choose to use it)
     	'menu' => __( 'The Main Menu', 'jointstheme' ),  // nav name
-    	'menu_class' => '',         // adding custom nav class
+    	'menu_class' => 'right',         // adding custom nav class
     	'theme_location' => 'main-nav',                 // where it's located in the theme
     	'before' => '',                                 // before the menu
         'after' => '',                                  // after the menu
