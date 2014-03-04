@@ -17,7 +17,7 @@ function rp_custom_post_films() {
 			'add_new' => __('Add New', 'jointstheme'), /* The add new menu item */
 			'add_new_item' => __('Add New Film', 'jointstheme'), /* Add New Display Title */
 			'edit' => __( 'Edit', 'jointstheme' ), /* Edit Dialog */
-			'edit_item' => __('Edit Films', 'jointstheme'), /* Edit Display Title */
+			'edit_item' => __('Edit Film', 'jointstheme'), /* Edit Display Title */
 			'new_item' => __('New Film', 'jointstheme'), /* New Display Title */
 			'view_item' => __('View Film', 'jointstheme'), /* View Display Title */
 			'search_items' => __('Search Films', 'jointstheme'), /* Search Custom Type Title */ 
@@ -43,9 +43,9 @@ function rp_custom_post_films() {
 	); /* end of register post type */
 	
 	/* this adds your post categories to your custom post type */
-	register_taxonomy_for_object_type('category', 'custom_type');
+	//register_taxonomy_for_object_type('category', 'custom_type');
 	/* this adds your post tags to your custom post type */
-	register_taxonomy_for_object_type('post_tag', 'custom_type');
+	//register_taxonomy_for_object_type('post_tag', 'custom_type');
 	
 } 
 
@@ -83,7 +83,7 @@ function rp_custom_post_films() {
 	// now let's add Film Types (these act like categories)
     register_taxonomy( 'film_type', 
     	array('rp_films'), /* if you change the name of register_post_type( 'custom_type', then you have to change this */
-    	array('hierarchical' => false,    /* if this is false, it acts like tags */                
+    	array('hierarchical' => true,    /* if this is false, it acts like tags */                
     		'labels' => array(
     			'name' => __( 'Film Types', 'jointstheme' ), /* name of the custom taxonomy */
     			'singular_name' => __( 'Film Type', 'jointstheme' ), /* single taxonomy name */

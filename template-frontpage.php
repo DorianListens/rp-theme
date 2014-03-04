@@ -6,14 +6,6 @@
 			
 				    <div id="main" class="large-12 medium-12 columns clearfix" role="main">
 
-				    	  <div class="row">
-
-						    <div class="large-12 columns"><div id="bigvid" class='flex-video vimeo widescreen'>
-						      <iframe src="//player.vimeo.com/video/87322941?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
-						    </div>
-						  </div>
-						<div class="row"><br /></div>
-
 <div class="row"> <!-- Main Orbit Slider -->
     <div class="large-12 columns">
     	<ul class="example-orbit" data-orbit data-options="bullets: false; timer: false; slide_number: false;">
@@ -25,12 +17,12 @@
 					 	$loop = new WP_Query( $args );
 						while ( $loop->have_posts() ) : $loop->the_post(); 
 					  // Get the terms
-					  $category = get_the_terms( get_the_ID(), 'film_cat' );
+					  $category = get_the_terms( get_the_ID(), 'film_category' );
 					  $film_type = get_the_terms( get_the_ID(), 'film_type' );
 					  ?>
 					  <div class="large-2 small-4 columns">
 					  	<a class="rp-vid-link" href="#" data-src="<?php get_video_src(); ?>">
-					  		<?php the_post_thumbnail(); ?>
+					  		<?php the_thumbnail(); ?>
 					  	</a>
 					  	<h4 class="slider-film-title"><?php the_title(); ?></h4>
 	              		<h5 class="slider-film-type"><?php echo $film_type->name; ?></h5>
@@ -48,12 +40,12 @@
 				 	$loop2 = new WP_Query( $args2 );
 					while ( $loop2->have_posts() ) : $loop2->the_post(); 
 				  	// Get the terms
-				  	$category = get_the_terms( get_the_ID(), 'film_cat' );
+				  	$category = get_the_terms( get_the_ID(), 'film_category' );
 				  	$film_type = get_the_terms( get_the_ID(), 'film_type' );
 				  	?>
 				  	<div class="large-2 small-4 columns">
 					  	<a class="rp-vid-link" href="#" data-src="<?php get_video_src(); ?>">
-					  		<?php the_post_thumbnail(); ?>
+					  		<?php the_thumbnail(); ?>
 					  	</a>
 					  	<h4 class="slider-film-title"><?php the_title(); ?></h4>
 	              		<h5 class="slider-film-type"><?php echo $film_type->name; ?></h5>

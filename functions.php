@@ -229,4 +229,12 @@ function joints_comments($comment, $args, $depth) {
 <?php
 } // don't remove this bracket!
 
+
+/**********************
+CUSTOM FIELD FUNCTIONS
+**********************/
+
+require_once(get_template_directory().'/library/custom-field-functions.php');
+
+
 ?>
