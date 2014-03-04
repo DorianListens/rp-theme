@@ -1,4 +1,5 @@
 					<footer class="footer" role="contentinfo">
+						 <div class="full-width colorone">
 					
 						<div id="inner-footer" class="row clearfix">
 						
@@ -13,6 +14,7 @@
 							</div>		
 						</div> <!-- end #inner-footer -->			
 					</footer> <!-- end .footer -->
+				</div>
 				</div> <!-- end #container -->
 			</div> <!-- end .inner-wrap -->
 		</div> <!-- end .off-canvas-wrap -->

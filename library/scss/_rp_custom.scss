@@ -1,0 +1,87 @@
+
+
+.fullWidth {
+   width: 100%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+.colorone{
+	background: #eee;
+}
+.colortwo {
+	background: #999;
+}
+
+.tip-title {
+	color: #fff;
+}
+
+.orbit-container {
+	height: 175px;
+}
+
+.xslider-film-title {
+	position: absolute; 
+	bottom: -20px; 
+	background: black; 
+	color: white;
+	margin-bottom: 0;
+	padding: 5px;
+}
+.slider-film-type {
+	position: absolute; 
+	top: 0px; 
+	right: 15px;
+	background: $primary-color; 
+	color: white;
+	margin-top: 0;
+	padding: 5px;
+}
+
+.film-item {
+	margin-bottom: 24px;
+	margin-right: 24px;
+}
+
+.filter {
+	display: inline;
+}
+
+.filter {
+	li {
+		display: inline;
+	}
+
+
+	a {
+		background: #eee;
+			&:hover { 
+			background: darken(#eee, 10);
+			}
+		padding: 5px;
+	}
+}
+
+.filter li > a.active {
+	background: darken(#eee, 20);
+}
+.img-circular{
+	margin: auto;
+ width: 200px;
+ height: 200px;
+ background-image: url("http://placehold.it/200x200&text=[img]");
+ background-size: cover;
+ display: block;
+ border-radius: 100px;
+ -webkit-border-radius: 100px;
+ -moz-border-radius: 100px;
+}
+
+@import "compass/css3/box-shadow";
+
+#bigvid {
+	@include box-shadow(0px 0px 30px 5px #999);
+	
+}

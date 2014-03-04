@@ -66,6 +66,55 @@ jQuery(document).ready(function($) {
     
 	
 	// add all your scripts here
+/*
+*
+* Switches vimeo source of main front page video player using data-attributes
+*
+*
+*/
+
+jQuery(function($) {
+    $('.rp-vid-link').on("click", function(event){
+        event.preventDefault();
+        $("#bigvid").fadeOut().find("iframe")
+                                    .attr('src', $(this).data("src"))
+                                    .add('#main-vid-link')
+                                    .attr('href', $(this).data('link'))
+                                    .delay(500)
+                                    .add("#bigvid")
+                                    .fadeIn();
+
+    });
+
+});
+/*
+*
+* Isotope Init
+*
+*
+*
+*/
+
+jQuery(function($){
+    $(window).load(function() {
+        var $container = $('#browse-grid');
+        // init
+        $container.isotope({
+        // options
+        itemSelector: '.film-item',
+        layoutMode: 'fitRows'
+        });
+
+    $('.filter a').click(function(){
+          var selector = $(this).attr('data-filter');
+            $('#browse-grid').isotope({ filter: selector });
+            $(this).parents('ul').find('a').removeClass('active');
+            $(this).addClass('active');
+          return false;
+        });
+    });
+});
+
 	
  
 }); /* end of as page load scripts */

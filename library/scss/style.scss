@@ -14,6 +14,7 @@ of the styles inside media queries.
 // IMPORTING STYLES
 //
 
+
 // import normalize
 @import "normalize";
 
@@ -29,6 +30,7 @@ of the styles inside media queries.
 // joints.scss
 @import "joints";
 
+@import "rp_custom";
 /*
 SMALL (BASE) SIZE
 These are the small/base styles. It's what people see on their phones. If
