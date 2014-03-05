@@ -80,9 +80,8 @@ jQuery(function($) {
                                     .attr('src', $(this).data("src"))
                                     .add('#main-vid-link')
                                     .attr('href', $(this).data('link'))
-                                    .delay(500)
                                     .add("#bigvid")
-                                    .fadeIn();
+                                    .fadeIn(800);
 
     });
 

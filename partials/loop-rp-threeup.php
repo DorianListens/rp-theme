@@ -9,7 +9,7 @@ $rp_fploop = new WP_Query ( $fp_args );
   <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );?>
   
     <div class="large-4 columns">
-      <div class="img-circular" style="background-image: url(<?php echo $url; ?>);"><?php the_post_thumbnail('thumbnail', $thumb_args); ?></div>
+      <div class="img-circular" style="background-image: url(<?php echo $url; ?>);"><?php the_post_thumbnail('medium', $thumb_args); ?></div>
       <h4 class="text-center"><?php the_title();?></h4>
       <?php the_content(); ?>
     </div>
@@ -24,7 +24,7 @@ $rp_fploop = new WP_Query ( $fp_args );
     if ($i == 0){$rp_newsloop->the_post();} ?>
     <?php $news_url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );?>
     <div class="large-4 columns">
-      <div class="img-circular" style="background-image: url(<?php echo $news_url; ?>);"><?php the_post_thumbnail('thumbnail', $thumb_args); ?></div>
+      <div class="img-circular" style="background-image: url(<?php echo $news_url; ?>);"><?php the_post_thumbnail('medium', $thumb_args); ?></div>
       <h4 class="text-center">News</h4>
       <p><ul>
         <?php $i++; ?>
