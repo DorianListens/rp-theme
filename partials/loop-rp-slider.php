@@ -22,14 +22,14 @@ if ($loop->have_posts()) : $counter = 0; ?>
 						<?php while ($counter < 7) : 
 
 					  	// Get the terms
-						 $category = get_the_terms( get_the_ID(), 'film_cat' );
-						 $film_type = get_the_terms( get_the_ID(), 'film_type' );
+						 $film_cats = get_the_terms( get_the_ID(), 'film_cat' );
+						 $film_types = get_the_terms( get_the_ID(), 'film_type' );
 						 ?>
 						  <div class="large-2 small-4 columns">
 						  	<a class="rp-vid-link" href="#" data-src="<?php get_video_src(); ?>" data-link="<?php the_permalink(); ?>">
 						  		<?php the_post_thumbnail(); ?>
 							  	<h4 class="slider-film-title"><?php the_title(); ?></h4>
-			              		<h5 class="slider-film-type"><?php echo $film_type->name; ?></h5>
+			              		<h5 class="slider-film-type"><?php foreach ($film_types as $type) : echo $type->name; endforeach;?></h5>
 		              		</a>
 						  </div>
 		  				<?php $counter++; 
