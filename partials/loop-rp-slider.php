@@ -2,11 +2,11 @@
 <div class="row">
 <?php // New Query
 $args = array( 'post_type' => 'rp_films', 'posts_per_page' => 20 );
-$loop = new WP_Query( $args );
-if ($loop->have_posts()) : $counter = 0; ?>
+$rp_slider_loop = new WP_Query( $args );
+if ($rp_slider_loop->have_posts()) : $counter = 0; ?>
  	
-<?php while ( $loop->have_posts() ) : ?>
-	<?php if ($counter == 0){$loop->the_post();} ?> <!-- First Film -->
+<?php while ( $rp_slider_loop->have_posts() ) : ?>
+	<?php if ($counter == 0){$rp_slider_loop->the_post();} ?> <!-- First Film -->
 	    <div class="large-12 columns"><div id="bigvid" class='flex-video vimeo widescreen'>
 	      <iframe src="<?php get_video_src(); ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 	    </div>
@@ -33,16 +33,16 @@ if ($loop->have_posts()) : $counter = 0; ?>
 		              		</a>
 						  </div>
 		  				<?php $counter++; 
-		  				$loop->the_post();	 ?>
+		  				$rp_slider_loop->the_post();?>
 		  				<?php endwhile; ?>
 						</div> <!--End Orbit Row -->
 					</li>	<!-- End Orbit Slide -->
 					<li> <!-- New Orbit Slide -->
 						<div class="row">
 					<?php $counter = 1; ?>
-					<?php $loop->the_post(); ?>
-				<?php endwhile; ?>
-			<?php endif; ?>
+					<?php $rp_slider_loop->the_post(); ?>
+	<?php endwhile; ?>
+<?php endif; ?>
 				</ul> 
 			</div>
 		</div> <!-- End Orbit -->

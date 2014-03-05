@@ -1,26 +1,29 @@
-  <div class="row">
+<div class="row">
+<?php //rp_fpitems Query
+$fp_args = array( 'post_type' => 'rp_fpitems', 'posts_per_page' => 2);
+$rp_fploop = new WP_Query ( $fp_args );
+?>
+<?php while ($rp_fploop->have_posts()) : $rp_fploop->the_post(); ?>
+  <?php $url = wp_get_attachment_url( get_post_thumbnail_id($post->ID) );?>
     <div class="large-4 columns">
-      <div class="img-circular"></div>
-      <h4 class="text-center">Who We Are</h4>
-      <p>We make documentary films for television and online distribution. </p>
-      <p>Watch them online right now!</p>
+      <div class="img-circular" style="background-image: url(<?php echo $url; ?>);"></div>
+      <h4 class="text-center"><?php the_title();?></h4>
+      <?php the_content(); ?>
     </div>
-    
-    <div class="large-4 columns">
-      <div class="img-circular"></div>
-      <h4 class="text-center">Current Projects</h4>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    </div>
+  <?php endwhile; ?>
     
     <div class="large-4 columns">
       <div class="img-circular"></div>
       <h4 class="text-center">News</h4>
+      <?php //News Query
+      $news_args = array ('post_type' => 'post', 'posts_per_page' => 3);
+      $rp_newsloop = new WP_Query ($news_args);
+      ?>
       <p><ul>
-        <li><a href="single-post.html">This is a list of recent news items</a></li>
-        <li><a href="single-post.html">This is a list of recent news items</a></li>  
-        <li><a href="single-post.html">This is a list of recent news items</a></li>
+        <?php while ($rp_newsloop->have_posts()) : $rp_newsloop->the_post(); ?>
+        <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+      <?php endwhile; ?>
       </ul></p>
     </div>
-  
   </div>
   <div class="row"><br /></div>

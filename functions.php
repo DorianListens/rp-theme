@@ -31,7 +31,8 @@ library/custom-post-type.php
 	- example custom taxonomy (like tags)
 */
 require_once(get_template_directory().'/library/custom-post-type-accordion.php'); // you can disable this if you like
-require_once(get_template_directory().'/library/film-custom-post-type.php'); // you can disable this if you like
+require_once(get_template_directory().'/library/film-custom-post-type.php');
+require_once(get_template_directory().'/library/fpitems-custom-post-type.php');
 /*
 library/admin.php
 	- removing some default WordPress dashboard widgets
