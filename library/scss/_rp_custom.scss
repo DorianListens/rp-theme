@@ -79,6 +79,11 @@
  -moz-border-radius: 100px;
 }
 
+img.inside-circle {
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
 @import "compass/css3/box-shadow";
 
 #bigvid {
