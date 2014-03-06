@@ -140,6 +140,8 @@ function joints_scripts_and_styles() {
     if (is_page('browse')) {
                 wp_register_script('isotope', get_template_directory_uri().'/library/js/isotope.pkgd.min.js',false, null);
                 wp_enqueue_script( 'isotope' );
+                wp_register_script('isotope-init', get_template_directory_uri().'/library/js/rp-isotope-init.js',false, null);
+                wp_enqueue_script( 'isotope-init' );
           
             }
 

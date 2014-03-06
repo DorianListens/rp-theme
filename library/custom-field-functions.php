@@ -1,8 +1,17 @@
 <?php
 
 function get_video_src() {
-	if ( get_field ('vimeo_embed') ) {
-		$vimeo_embed = get_field ('vimeo_embed');
+	if ( get_field('video_url')) {
+		$video_url = get_field('video_url'); 
+		$oembed_endpoint = 'http://vimeo.com/api/oembed';
+		// Create the URLs
+		$xml_url = $oembed_endpoint . '.xml?url=' . rawurlencode($video_url);
+
+		$oembed = simplexml_load_string(curl_get($xml_url));
+		$vimeo_embed = html_entity_decode($oembed->html);
+	}
+	elseif ( get_field ('vimeo_embed') ) {
+	$vimeo_embed = get_field ('vimeo_embed');	
 	}
 	preg_match('/src="([^"]+)"/', $vimeo_embed, $match);
 	$video_src = $match[1];
@@ -10,12 +19,7 @@ function get_video_src() {
 }
 
 function display_video() {
-		if ( get_field ('vimeo_embed') ) {
-		$vimeo_embed = get_field ('vimeo_embed');
-	}
-	preg_match('/src="([^"]+)"/', $vimeo_embed, $match);
-	$video_src = $match[1];
-	echo '<div class="flex-video vimeo widescreen"><iframe src= " ', $video_src ,'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
+	echo '<div class="flex-video vimeo widescreen"><iframe src= " ', get_video_src() ,'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
 }
 
 function display_film_info() {
@@ -42,3 +46,31 @@ function display_film_info() {
 	echo '<h5>Running Time:</h5> <p>', $running_time, "</p>";
 
 }
+
+// Curl helper function
+function curl_get($url) {
+    $curl = curl_init($url);
+    curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+    curl_setopt($curl, CURLOPT_TIMEOUT, 30);
+    curl_setopt($curl, CURLOPT_FOLLOWLOCATION, 1);
+    $return = curl_exec($curl);
+    curl_close($curl);
+    return $return;
+}
+
+
+// Vimeo Thumbnails
+function get_video_thumb($width) {
+	if ( get_field ('video_url') ) {
+		$video_url = get_field ('video_url');
+	}
+	$oembed_endpoint = 'http://vimeo.com/api/oembed';
+	$xml_url = $oembed_endpoint . '.xml?url=' . rawurlencode($video_url);
+	$oembed = simplexml_load_string(curl_get($xml_url));
+	$thumb = $oembed->thumbnail_url;
+
+	echo '<img src="'. $thumb .'"width="'.$width.'"/>';
+}
+
+
+

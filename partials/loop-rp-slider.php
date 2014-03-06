@@ -1,13 +1,13 @@
 
 <div class="row">
 <?php // New Query
-$args = array( 'post_type' => 'rp_films', 'posts_per_page' => 20 );
-$rp_slider_loop = new WP_Query( $args );
+$slider_args = array( 'post_type' => 'rp_films', 'posts_per_page' => -1);
+$rp_slider_loop = new WP_Query( $slider_args );
 if ($rp_slider_loop->have_posts()) : $counter = 0; ?>
  	
 <?php while ( $rp_slider_loop->have_posts() ) : ?>
 	<?php if ($counter == 0){$rp_slider_loop->the_post();} ?> <!-- First Film -->
-	    <div class="large-12 columns"><div id="bigvid" class='flex-video vimeo widescreen'>
+	    <div class="large-12 columns" id="bigvidcontainer"><div id="bigvid" class='flex-video vimeo widescreen'>
 	      <iframe src="<?php get_video_src(); ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>
 	    </div>
 	    <a id="main-vid-link" href="<?php the_permalink(); ?>" class="right">More About This Film</a>
@@ -27,7 +27,7 @@ if ($rp_slider_loop->have_posts()) : $counter = 0; ?>
 						 ?>
 						  <div class="large-2 small-4 columns">
 						  	<a class="rp-vid-link" href="#" data-src="<?php get_video_src(); ?>" data-link="<?php the_permalink(); ?>">
-						  		<?php the_post_thumbnail(); ?>
+						  		<?php get_video_thumb('200px');?>
 							  	<h4 class="slider-film-title"><?php the_title(); ?></h4>
 			              		<h5 class="slider-film-type"><?php foreach ($film_types as $type) : echo $type->name; endforeach;?></h5>
 		              		</a>

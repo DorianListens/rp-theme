@@ -8318,7 +8318,7 @@ th.hide-for-touch {
 
 /* line 21, ../scss/_rp_custom.scss */
 .orbit-container {
-  height: 175px;
+  height: auto;
 }
 
 /* line 25, ../scss/_rp_custom.scss */
