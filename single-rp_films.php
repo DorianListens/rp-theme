@@ -22,6 +22,7 @@ The Template file for displaying single films
 					   		<?php get_template_part( 'partials/content', 'missing' ); ?>
 
 					    <?php endif; ?>
+					   
 			
 					</div> <!-- end #main -->
   

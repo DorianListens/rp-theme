@@ -1,22 +1,22 @@
 <?php get_header(); ?>
-			
+
 			<div id="content">
-			
+
 				<div id="inner-content" class="row clearfix">
-				
-				    <div id="main" class="large-8 medium-8 columns first clearfix" role="main">
-				
+
+				    <div id="main" class="large-12 medium-12 columns first clearfix" role="main">
+
 					    <?php if (is_category()) { ?>
 						    <h1>
 							    <span><?php _e("Topic:", "jointstheme"); ?></span> <?php single_cat_title(); ?>
 					    	</h1>
-					    
-					    <?php } elseif (is_tag()) { ?> 
+
+					    <?php } elseif (is_tag()) { ?>
 						    <h1>
 							    <span><?php _e("Tagged:", "jointstheme"); ?></span> <?php single_tag_title(); ?>
 						    </h1>
-					    
-					    <?php } elseif (is_author()) { 
+
+					    <?php } elseif (is_author()) {
 					    	global $post;
 					    	$author_id = $post->post_author;
 					    ?>
@@ -29,12 +29,12 @@
 						    <h1>
 	    						<span><?php _e("Daily Archives:", "jointstheme"); ?></span> <?php the_time('l, F j, Y'); ?>
 						    </h1>
-		
+
 		    			<?php } elseif (is_month()) { ?>
 			    		    <h1>
 				    	    	<span><?php _e("Monthly Archives:", "jointstheme"); ?></span> <?php the_time('F Y'); ?>
 					        </h1>
-					
+
 					    <?php } elseif (is_year()) { ?>
 					        <h1>
 					    	    <span><?php _e("Yearly Archives:", "jointstheme"); ?></span> <?php the_time('Y'); ?>
@@ -42,11 +42,11 @@
 					    <?php } ?>
 
 					    <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-					
+
 					    	<?php get_template_part( 'partials/loop', 'archive' ); ?>
-					
-					    <?php endwhile; ?>		
-					
+
+					    <?php endwhile; ?>
+
 					        <?php if (function_exists('joints_page_navi')) { ?>
 						        <?php joints_page_navi(); ?>
 					        <?php } else { ?>
@@ -57,19 +57,19 @@
 							        </ul>
 					    	    </nav>
 					        <?php } ?>
-					
+
 					    <?php else : ?>
-					
+
     						<?php get_template_part( 'partials/content', 'missing' ); ?>
-					
+
 					    <?php endif; ?>
-			
+
     				</div> <!-- end #main -->
-    
-	    			<?php get_sidebar(); ?>
-                
+
+	    			<?php //get_sidebar(); ?>
+
                 </div> <!-- end #inner-content -->
-                
+
 			</div> <!-- end #content -->
 
 <?php get_footer(); ?>

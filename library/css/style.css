@@ -4690,11 +4690,11 @@ kbd {
 .orbit-container .orbit-prev > span {
   border-right-style: solid;
   border-color: transparent;
-  border-right-color: white;
+  border-right-color: #eeeeee;
 }
 /* line 282, ../scss/foundation/components/_orbit.scss */
 .orbit-container .orbit-prev:hover > span {
-  border-right-color: white;
+  border-right-color: #dddddd;
 }
 /* line 286, ../scss/foundation/components/_orbit.scss */
 .orbit-container .orbit-next {
@@ -4704,13 +4704,13 @@ kbd {
 .orbit-container .orbit-next > span {
   border-color: transparent;
   border-left-style: solid;
-  border-left-color: white;
+  border-left-color: #eeeeee;
   left: 50%;
   margin-left: -4px;
 }
 /* line 294, ../scss/foundation/components/_orbit.scss */
 .orbit-container .orbit-next:hover > span {
-  border-left-color: white;
+  border-left-color: #dddddd;
 }
 
 /* line 300, ../scss/foundation/components/_orbit.scss */
@@ -8318,7 +8318,7 @@ th.hide-for-touch {
 
 /* line 21, ../scss/_rp_custom.scss */
 .orbit-container {
-  height: auto;
+  height: 200px;
 }
 
 /* line 25, ../scss/_rp_custom.scss */
@@ -8337,42 +8337,43 @@ th.hide-for-touch {
   top: 0px;
   right: 15px;
   background: #008cba;
+  font-size: 1rem;
   color: white;
   margin-top: 0;
   padding: 5px;
 }
 
-/* line 43, ../scss/_rp_custom.scss */
+/* line 44, ../scss/_rp_custom.scss */
 .film-item {
   margin-bottom: 24px;
   margin-right: 24px;
 }
 
-/* line 48, ../scss/_rp_custom.scss */
+/* line 49, ../scss/_rp_custom.scss */
 .filter {
   display: inline;
 }
 
-/* line 53, ../scss/_rp_custom.scss */
+/* line 54, ../scss/_rp_custom.scss */
 .filter li {
   display: inline;
 }
-/* line 58, ../scss/_rp_custom.scss */
+/* line 59, ../scss/_rp_custom.scss */
 .filter a {
   background: #eee;
   padding: 5px;
 }
-/* line 60, ../scss/_rp_custom.scss */
+/* line 61, ../scss/_rp_custom.scss */
 .filter a:hover {
   background: #d4d4d4;
 }
 
-/* line 67, ../scss/_rp_custom.scss */
+/* line 68, ../scss/_rp_custom.scss */
 .filter li > a.active {
   background: #bbbbbb;
 }
 
-/* line 70, ../scss/_rp_custom.scss */
+/* line 71, ../scss/_rp_custom.scss */
 .img-circular {
   margin: auto;
   width: 200px;
@@ -8385,17 +8386,29 @@ th.hide-for-touch {
   -moz-border-radius: 100px;
 }
 
-/* line 82, ../scss/_rp_custom.scss */
+/* line 83, ../scss/_rp_custom.scss */
 img.inside-circle {
   opacity: 0;
   filter: alpha(opacity=0);
 }
 
-/* line 89, ../scss/_rp_custom.scss */
+/* line 90, ../scss/_rp_custom.scss */
 #bigvid {
   -webkit-box-shadow: 0px 0px 30px 5px #999999;
   -moz-box-shadow: 0px 0px 30px 5px #999999;
   box-shadow: 0px 0px 30px 5px #999999;
+}
+
+/* line 95, ../scss/_rp_custom.scss */
+.flex-video {
+  -webkit-box-shadow: 0px 0px 30px 5px #999999;
+  -moz-box-shadow: 0px 0px 30px 5px #999999;
+  box-shadow: 0px 0px 30px 5px #999999;
+}
+
+/* line 99, ../scss/_rp_custom.scss */
+article {
+  margin-bottom: 24px;
 }
 
 /*
