@@ -4,7 +4,7 @@
 $slider_args = array( 'post_type' => 'rp_films', 'posts_per_page' => -1);
 $rp_slider_loop = new WP_Query( $slider_args );
 if ($rp_slider_loop->have_posts()) : $counter = 0; ?>
- 	
+
 <?php while ( $rp_slider_loop->have_posts() ) : ?>
 	<?php if ($counter == 0){$rp_slider_loop->the_post();} ?> <!-- First Film -->
 	    <div class="large-12 columns" id="bigvidcontainer"><div id="bigvid" class='flex-video vimeo widescreen'>
@@ -19,7 +19,8 @@ if ($rp_slider_loop->have_posts()) : $counter = 0; ?>
 			      	<li> <!-- First Orbit Slide -->
 			      		<div class="row">
 						<?php $counter++; ?>
-						<?php while ($counter < 7) : 
+						<?php while ($counter < 7) :
+
 
 					  	// Get the terms
 						 $film_cats = get_the_terms( get_the_ID(), 'film_cat' );
@@ -29,20 +30,25 @@ if ($rp_slider_loop->have_posts()) : $counter = 0; ?>
 						  	<a class="rp-vid-link" href="#" data-src="<?php get_video_src(); ?>" data-link="<?php the_permalink(); ?>">
 						  		<?php get_video_thumb('200px');?>
 							  	<h4 class="slider-film-title"><?php the_title(); ?></h4>
-			              		<h5 class="slider-film-type"><?php foreach ($film_types as $type) : echo $type->name; endforeach;?></h5>
-		              		</a>
+	              		<h5 class="slider-film-type">
+                      <?php foreach ($film_types as $type) : echo $type->name; endforeach;?>
+                    </h5>
+		            </a>
 						  </div>
-		  				<?php $counter++; 
-		  				$rp_slider_loop->the_post();?>
-		  				<?php endwhile; ?>
+            <?php if ($counter == 6) : ?>
 						</div> <!--End Orbit Row -->
 					</li>	<!-- End Orbit Slide -->
 					<li> <!-- New Orbit Slide -->
 						<div class="row">
-					<?php $counter = 1; ?>
+					<?php if ($rp_slider_loop->have_posts()) {$counter = 0;} ?>
+        <?php endif ?>
+        <?php $counter += 1; ?>
+					<?php if (!($rp_slider_loop->current_post + 1 < $rp_slider_loop->post_count)) {break;} ?>
 					<?php $rp_slider_loop->the_post(); ?>
+
+        <?php endwhile; ?>
 	<?php endwhile; ?>
 <?php endif; ?>
-				</ul> 
+				</ul>
 			</div>
 		</div> <!-- End Orbit -->
