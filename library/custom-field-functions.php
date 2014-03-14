@@ -114,3 +114,5 @@ function save_vimeo_thumb( $post_id, $post ) {
 	}
 }
 add_action( 'save_post', 'save_vimeo_thumb' );
+
+add_image_size( 'video_thumb', 200);

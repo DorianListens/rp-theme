@@ -5,9 +5,6 @@
       	<?php display_video(); ?>
       </div>
     </div>
-
-
-
 	</section>
 
 	<header class="article-header">
@@ -17,7 +14,6 @@
 	<div class="row">
 		<div class="large-8 small-12 columns">
 	    <section class="entry-content clearfix" itemprop="articleBody">
-			<?php the_post_thumbnail('full'); ?>
 			<?php the_content(); ?>
 		</section><!-- end article section -->
 		</div>

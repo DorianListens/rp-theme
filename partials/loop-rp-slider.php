@@ -28,7 +28,7 @@ if ($rp_slider_loop->have_posts()) : $counter = 0; ?>
 						 ?>
 						  <div class="large-2 small-4 columns">
 						  	<a class="rp-vid-link" href="#" data-src="<?php get_video_src(); ?>" data-link="<?php the_permalink(); ?>">
-						  		<?php get_video_thumb('200px');?>
+						  		<?php the_post_thumbnail('video_thumb');//get_video_thumb('200px');?>
 							  	<h4 class="slider-film-title"><?php the_title(); ?></h4>
 	              		<h5 class="slider-film-type">
                       <?php foreach ($film_types as $type) : echo $type->name; endforeach;?>
