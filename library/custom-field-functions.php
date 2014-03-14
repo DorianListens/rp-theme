@@ -2,7 +2,7 @@
 
 function get_video_src() {
 	if ( get_field('video_url')) {
-		$video_url = get_field('video_url'); 
+		$video_url = get_field('video_url');
 		$oembed_endpoint = 'http://vimeo.com/api/oembed';
 		// Create the URLs
 		$xml_url = $oembed_endpoint . '.xml?url=' . rawurlencode($video_url);
@@ -11,7 +11,7 @@ function get_video_src() {
 		$vimeo_embed = html_entity_decode($oembed->html);
 	}
 	elseif ( get_field ('vimeo_embed') ) {
-	$vimeo_embed = get_field ('vimeo_embed');	
+	$vimeo_embed = get_field ('vimeo_embed');
 	}
 	preg_match('/src="([^"]+)"/', $vimeo_embed, $match);
 	$video_src = $match[1];
@@ -32,7 +32,7 @@ function display_film_info() {
 	} else { $running_time = "Not Available"; }
 
 	if (get_field('official_website')) {
-		$official_website = get_field('official_website'); 
+		$official_website = get_field('official_website');
 	} else { $official_website = "Not Available";}
 
 	if ($official_website == "Not Available")  {
@@ -60,7 +60,7 @@ function curl_get($url) {
 
 
 // Vimeo Thumbnails
-function get_video_thumb($width) {
+function video_thumb() {
 	if ( get_field ('video_url') ) {
 		$video_url = get_field ('video_url');
 	}
@@ -69,8 +69,48 @@ function get_video_thumb($width) {
 	$oembed = simplexml_load_string(curl_get($xml_url));
 	$thumb = $oembed->thumbnail_url;
 
-	echo '<img src="'. $thumb .'"width="'.$width.'"/>';
+	return $thumb;
+
+}
+
+function get_video_thumb($width) {
+	echo '<img src="'. video_thumb() .'"width="'.$width.'"/>';
 }
 
 
+// Autosave Thumbnails
+function save_vimeo_thumb( $post_id, $post ) {
 
+  $slug = 'rp_films';
+
+	if ( ! has_post_thumbnail($post_id)) {
+
+	  // If this isn't a film, don't update.
+	  if ( $slug = $_POST['post_type'] ) {
+
+	  // - Update the post's metadata.
+			require_once(ABSPATH . 'wp-admin/includes/media.php');
+			require_once(ABSPATH . 'wp-admin/includes/file.php');
+			require_once(ABSPATH . 'wp-admin/includes/image.php');
+
+			$url = video_thumb();
+			$desc = "Film Thumbnail " . $post_id;
+			$tmp = download_url( $url );
+
+	    $file_array['name'] = $post->post_name . '-thumb.jpg';
+	    $file_array['tmp_name'] = $tmp;
+	    // If error storing temporarily, unlink
+	    if ( is_wp_error( $tmp ) ) {
+	        @unlink($file_array['tmp_name']);
+	        $file_array['tmp_name'] = '';
+	    }
+	    // do the validation and storage stuff
+	    $attachment_id = media_handle_sideload( $file_array, $post_id, $desc );
+	    // If error storing permanently, unlink
+	    if ( is_wp_error($id) ) {@unlink($file_array['tmp_name']);}
+
+	    add_post_meta( $post_id, '_thumbnail_id', $attachment_id, true );
+		}
+	}
+}
+add_action( 'save_post', 'save_vimeo_thumb' );
