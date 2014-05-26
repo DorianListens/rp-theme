@@ -1,6 +1,6 @@
 #RP-Theme
 A 2014 redesign for independent documentary film studio Rotating Planet Films (http://www.rotatingplanet.com).
-Built off the excellent JointsWP(http://www.jointswp.com) by [@jeremyenglert](https://twitter.com/jeremyenglert) of The Ad Garage.
+Built off the excellent JointsWP(http://www.jointswp.com) by [@jeremyenglert](https://twitter.com/jeremyenglert).
 
 Find out more here: www.jointswp.com  
 Demo: www.jointswp.com/demo

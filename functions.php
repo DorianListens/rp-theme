@@ -30,7 +30,7 @@ library/custom-post-type.php
 	- example custom taxonomy (like categories)
 	- example custom taxonomy (like tags)
 */
-require_once(get_template_directory().'/library/custom-post-type-accordion.php'); // you can disable this if you like
+//require_once(get_template_directory().'/library/custom-post-type-accordion.php'); // you can disable this if you like
 require_once(get_template_directory().'/library/film-custom-post-type.php');
 require_once(get_template_directory().'/library/fpitems-custom-post-type.php');
 /*
@@ -71,7 +71,7 @@ for the 600 x 100 image:
 <?php the_post_thumbnail( 'joints-thumb-600' ); ?>
 
 You can change the names and dimensions to whatever
-you like. 
+you like.
 */
 
 

@@ -30,7 +30,7 @@ Template Name: Rotating Planet Browse Page
 					    <div class="row">
 					    	<div class="large-12 columns">
 
-						        <ul id="filter" class="filter clearfix">
+						        <ul id="filter" class="inline-list clearfix">
 											<li>Categories:</li>
 						            <li><a href="#" class="active" data-filter="*"><span>All</span></a></li>
 						            <?php foreach ($film_cats as $cat ) : ?>

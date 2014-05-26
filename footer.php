@@ -1,7 +1,7 @@
 					<footer class="footer" role="contentinfo">
-						 <div class="full-width colorone">
+						 <div class="full-width footer-image">
 
-						<div id="inner-footer" class="row clearfix">
+						<div id="inner-footer" class="row clearfix full-width">
 
 							<div class="large-12 medium-12 columns">
 								<nav role="navigation">
@@ -9,11 +9,13 @@
 		    					</nav>
 		    				</div>
 
-			                <div class="large-12 medium-12 columns">
-											<br />
-								<p class="source-org copyright">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?>.</p>
+			          <!-- <div class="large-12 medium-12 columns"> -->
 
-							</div>
+								<div class="source-org copyright text-center">
+									<div class="text">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>
+								</div>
+
+							<!-- </div> -->
 						</div> <!-- end #inner-footer -->
 					</footer> <!-- end .footer -->
 				</div>

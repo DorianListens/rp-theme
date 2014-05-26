@@ -238,6 +238,7 @@ $microformat-abbr-font-decoration: none !default;
 
       &:hover,
       &:focus { color: $anchor-font-color-hover; }
+      // &:visited { color: $anchor-font-color;}
 
       img { border:none; }
     }

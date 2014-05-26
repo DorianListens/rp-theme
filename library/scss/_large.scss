@@ -11,7 +11,12 @@ Styles apply to 64.063em and up.
 GENERAL STYLES
 *********************/
 
-body {}
+body {
+	// background: url(../images/rp-logo2.png) no-repeat fixed bottom left;
+	// background-size: 12%;
+	background-color: $body-bg;
+}
+
 
 /*********************
 LAYOUT & GRID STYLES

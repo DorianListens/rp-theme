@@ -1,25 +1,59 @@
 
 
-.fullWidth {
+.full-width {
    width: 100%;
    margin-left: auto;
    margin-right: auto;
    max-width: initial;
 }
 
-.colorone{
-	background: #eee;
+.footer-image{
+  min-height: 250px;
+  height: 250px;
+  background: url(../images/rp-footer-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.colortwo {
-	background: #999;
+.logo-image{
+  height: 248px;
+  width: 168px;
+  background: url(../images/rp-logo-image.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.ari img {
+  margin-top: -30px;
+  margin-left: -30px;
+  width: 150%;
+  max-width: none;
+  display: inline-block;
 }
 
+.source-org {
+  position: relative;
+  left: -20px;
+  background: #000;
+  color: #fff;
+  margin-top: 100px;
+  min-height: 45px;
+  padding: 10px;
+  width: 33%;
+  color: $primary-color;
+  -webkit-transform: skew(-30deg);
+    -moz-transform: skew(-30deg);
+    transform: skew(-30deg);
+  .text {
+    -webkit-transform: skew(30deg);
+      -moz-transform: skew(30deg);
+      transform: skew(30deg);
+  }
+}
 .tip-title {
 	color: #fff;
 }
 
 .orbit-container {
-	height: 200px;
+	min-height: 200px;
 }
 
 .xslider-film-title {
@@ -87,15 +121,59 @@ img.inside-circle {
 
 @import "compass/css3/box-shadow";
 
-#bigvid {
-	@include box-shadow(0px 0px 30px 5px #999);
-
-}
-
-.flex-video {
-  @include box-shadow(0px 0px 30px 5px #999);
-}
+// #bigvid {
+// 	@include box-shadow(0px 0px 30px 5px #999);
+//
+// }
+//
+// .flex-video {
+//   @include box-shadow(0px 0px 30px 5px #999);
+// }
 
 article {
   margin-bottom: 24px;
+}
+
+.rp-section{
+  margin-bottom: rem-calc(20);
+}
+
+span.main-head{
+  font-weight: $topbar-title-weight;
+  color: #fff;
+  width: 50%;
+  // display: block;
+  padding: 0 $topbar-link-padding;
+  line-height: $topbar-height;
+  font-size: $topbar-title-font-size;
+  font-family: $header-font-family;
+  margin: 0;
+}
+
+.rp-slider > li {
+  padding-left: rem-calc(40);
+  padding-right: rem-calc(40);
+}
+
+.bpanel {
+  @include panel();
+  border: 0px;
+  background: #000;
+  p {
+    color: #fff;
+  }
+  h1,h2,h3,h4,h5,h6 {
+    color: #fff;
+  }
+}
+.cpanel {
+  @include panel();
+  border-color: #666;
+  background: $body-bg;
+  a {
+    color: #000;
+  }
+}
+.top-bar .name {
+  margin: 23px 0;
 }

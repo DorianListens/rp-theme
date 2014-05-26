@@ -16,7 +16,8 @@ jQuery(function($){
         layoutMode: 'fitRows'
         });
 
-    $('.filter a').click(function(){
+    $('#filter a').click(function(){
+      console.log("Clicked");
           var selector = $(this).attr('data-filter');
             $('#browse-grid').isotope({ filter: selector });
             $(this).parents('ul').find('a').removeClass('active');

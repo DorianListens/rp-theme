@@ -31,14 +31,14 @@
 // $include-html-grid-classes: $include-html-classes;
 // $include-xl-html-grid-classes: false;
 
-// $row-width: rem-calc(1000);
+$row-width: rem-calc(1200);
 // $column-gutter: rem-calc(30);
 // $total-columns: 12;
 
 // We use these to control various global styles
-// $body-bg: #fff;
-// $body-font-color: #222;
-   $body-font-family: "Open Sans", Arial, sans-serif;
+$body-bg: #7d7d7d;
+$body-font-color: #000;
+$body-font-family: "Myriad Pro Regular", Arial, sans-serif;
 // $body-font-weight: normal;
 // $body-font-style: normal;
 
@@ -51,8 +51,8 @@
 // $default-float: left;
 
 // We use these as default colors throughout
-// $primary-color: #008CBA;
-// $secondary-color: #e7e7e7;
+ $primary-color: #999;
+// $secondary-color: #A13B3B;
 // $alert-color: #f04124;
 // $success-color: #43AC6A;
 // $warning-color: #f08a24;
@@ -113,10 +113,10 @@
 // $include-html-type-classes: $include-html-classes;
 
 // We use these to control header font styles
-// $header-font-family: $body-font-family;
-// $header-font-weight: 300;
+$header-font-family: 'Big-noodle'; //'Abril Fatface'; $body-font-family;
+// $header-font-weight: 900;
 // $header-font-style: normal;
-// $header-font-color: #222;
+$header-font-color: #000;
 // $header-line-height: 1.4;
 // $header-top-margin: .2rem;
 // $header-bottom-margin: .5rem;
@@ -159,14 +159,14 @@
 
 // We use these to style anchors
 // $anchor-text-decoration: none;
-// $anchor-font-color: $primary-color;
+$anchor-font-color: #fff; // $primary-color;
 // $anchor-font-color-hover: scale-color($primary-color, $lightness: -14%);
 
 // We use these to style the <hr> element
-// $hr-border-width: 1px;
+$hr-border-width: 4px;
 // $hr-border-style: solid;
-// $hr-border-color: #ddd;
-// $hr-margin: rem-calc(20);
+$hr-border-color: #000;
+$hr-margin: rem-calc(10);
 
 // We use these to style lists
 // $list-style-position: outside;
@@ -762,7 +762,7 @@
 // $include-html-panel-classes: $include-html-classes;
 
 // We use these to control the background and border styles
-// $panel-bg: scale-color(#fff, $lightness: -5%);
+// $panel-bg: scale-color(#000, $lightness: 10%);
 // $panel-border-style: solid;
 // $panel-border-size: 1px;
 
@@ -1123,16 +1123,16 @@
 // $include-html-top-bar-classes: $include-html-classes;
 
 // Background color for the top bar
-// $topbar-bg-color: #333;
+$topbar-bg-color: #000;
 // $topbar-bg: $topbar-bg-color;
 
 // Height and margin
-// $topbar-height: 45px;
-// $topbar-margin-bottom: 0;
+$topbar-height: 45px;
+$topbar-margin-bottom: rem-calc(20);
 
 // Controlling the styles for the title in the top bar
 // $topbar-title-weight: normal;
-// $topbar-title-font-size: rem-calc(17);
+$topbar-title-font-size: rem-calc(70);
 
 // Style the top bar dropdown elements
 // $topbar-dropdown-bg: #333;
@@ -1144,17 +1144,17 @@
 // $topbar-dropdown-toggle-alpha: 0.4;
 
 // Set the link colors and styles for top-level nav
-// $topbar-link-color: #fff;
+$topbar-link-color: #fff!important;
 // $topbar-link-color-hover: #fff;
 // $topbar-link-color-active: #fff;
 // $topbar-link-color-active-hover: #fff;
 // $topbar-link-weight: normal;
-// $topbar-link-font-size: rem-calc(13);
+$topbar-link-font-size: rem-calc(17);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg-hover: #272727  ;
 // $topbar-link-bg-active: $primary-color;
 // $topbar-link-bg-active-hover: scale-color($primary-color, $lightness: -14%);
-// $topbar-link-font-family: $body-font-family;
+$topbar-link-font-family: $header-font-family;
 
 // $topbar-button-font-size: 0.75rem;
 
