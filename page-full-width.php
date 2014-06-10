@@ -22,9 +22,8 @@ Template Name: Full Width (No Sidebar)
 
 					    <?php endif; ?>
 
-							<hr />
+							<div class="row"><br /></div>
 
-							<?php get_template_part ('partials/loop', 'rp-recents'); ?>
 
     				</div> <!-- end #main -->
 

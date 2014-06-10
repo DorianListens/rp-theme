@@ -1,7 +1,8 @@
 					<footer class="footer" role="contentinfo">
-						 <div class="full-width footer-image">
 
-						<div id="inner-footer" class="row clearfix full-width">
+
+						<div id="inner-footer" class="row clearfix">
+							<div class="footer-image">
 
 							<div class="large-12 medium-12 columns">
 								<nav role="navigation">
@@ -11,7 +12,7 @@
 
 			          <!-- <div class="large-12 medium-12 columns"> -->
 
-								<div class="source-org copyright text-center">
+								<div class="source-org copyright">
 									<div class="text">&copy; <?php echo date('Y'); ?> <?php bloginfo('name'); ?></div>
 								</div>
 

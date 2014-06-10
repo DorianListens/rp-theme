@@ -3,7 +3,7 @@
 		<div class="large-4 small-6 columns">
 			<?php the_post_thumbnail('full'); ?>
 		</div>
-		<div class="large-8 small-6 columns">
+		<div class="large-6 small-6 columns end">
 	<header class="article-header">
 		<h2><a href="<?php the_permalink() ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
 		<?php //get_template_part( 'partials/content', 'byline' ); ?>

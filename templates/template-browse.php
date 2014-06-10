@@ -30,13 +30,13 @@ Template Name: Rotating Planet Browse Page
 					    <div class="row">
 					    	<div class="large-12 columns">
 
-						        <ul id="filter" class="inline-list clearfix">
-											<li>Categories:</li>
-						            <li><a href="#" class="active" data-filter="*"><span>All</span></a></li>
-						            <?php foreach ($film_cats as $cat ) : ?>
-						            <li><a href="#" data-filter=".<?php echo $cat->slug; ?>"><span><?php echo $cat->name; ?></span></a></li>
-						            <?php endforeach; ?>
-						        </ul><!-- /filter -->
+									<dl id="filter" class="sub-nav">
+									  <dt>Filter:</dt>
+									  <dd class="active"><a href="#" class="active" data-filter="*"><span>All</span></a></dd>
+									  <?php foreach ($film_cats as $cat ) : ?>
+											<dd><a href="#" data-filter=".<?php echo $cat->slug; ?>"><span><?php echo $cat->name; ?></span></a></dd>
+										<?php endforeach; ?>
+									</dl>
 						    </div>
 						</div>
 
@@ -45,7 +45,8 @@ Template Name: Rotating Planet Browse Page
 				  	<!-- .Broswe-Grid -->
 
 				  	<div class="row">
-						<div class="large-12 columns" id="browse-grid">
+						<div class="large-12 columns" >
+							<ul class="large-block-grid-3" id="browse-grid">
 								<?php //Film Query
 								$browse_args = array( 'post_type' => 'rp_films', 'posts_per_page' => -1 );
 								$film_loop = new WP_Query( $browse_args );
@@ -53,12 +54,13 @@ Template Name: Rotating Planet Browse Page
 								$film_types = get_the_terms( get_the_ID(), 'film_type');
 								$single_film_cats = get_the_terms( get_the_ID(), 'film_cat');
 								?>
-								<div class="film-item <?php if ($single_film_cats) foreach ($single_film_cats as $cat) echo $cat->slug . ' '; ?>">
-									<span data-tooltip class="has-tip tip-right" title="<h1 class='tip-title'><?php the_title(); ?></h1><p><?php the_excerpt(); ?></p>">
-										<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('video_thumb');?></a>
+								<li class="film-item <?php if ($single_film_cats) foreach ($single_film_cats as $cat) echo $cat->slug . ' '; ?>">
+									<span data-tooltip class="has-tip tip-right" title="<h2 class='tip-title'><?php the_title(); ?></h2><p><?php the_excerpt(); ?></p>">
+										<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large_vid');?><h4 class="browse-film-title"><?php the_title(); ?></h4></a>
 									</span>
-								</div>
+								</li>
 							<?php endwhile; ?>
+							</ul>
 						</div>
 					</div>
 

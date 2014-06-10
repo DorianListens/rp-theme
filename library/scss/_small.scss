@@ -134,14 +134,14 @@ HEADER STYLES
 *********************/
 
 .header {
-	margin-bottom: 20px;
+	// margin-bottom: 20px;
 		#inner-header {
 			li {
 				list-style: none;
 			}
 		}
 }
-    
+
 /*********************
 NAVIGATION STYLES
 *********************/
@@ -149,7 +149,7 @@ NAVIGATION STYLES
 	.title-area {
 		z-index: 1;
 	}
-} 
+}
 
 .off-canvas-list {
 	ul {
@@ -505,7 +505,7 @@ COMMENT STYLES
 
 		&:hover,
 		&:focus {
-		
+
 		}
 
 	} /* end .commentlist .comment-reply-link */
@@ -639,7 +639,7 @@ SIDEBARS & ASIDES
 #sidebar-offcanvas {
 	.widgettitle {
 		color: #fff;
-	}	
+	}
 }
 /*********************
 FOOTER STYLES
@@ -647,7 +647,7 @@ FOOTER STYLES
 
 .footer {
 	clear: both;
-	margin-top: 1em;
+	// margin-top: 1em;
 }
 
 	/*
@@ -671,7 +671,7 @@ FOOTER STYLES
 
 
 	.copyright { }
-	
+
 /*********************
 FOUNDATION STYLES
 *********************/

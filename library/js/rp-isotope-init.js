@@ -20,8 +20,8 @@ jQuery(function($){
       console.log("Clicked");
           var selector = $(this).attr('data-filter');
             $('#browse-grid').isotope({ filter: selector });
-            $(this).parents('ul').find('a').removeClass('active');
-            $(this).addClass('active');
+            $(this).parents('dl').find('dd').removeClass('active');
+            $(this).parent().addClass('active');
           return false;
         });
     });

@@ -11,13 +11,10 @@ Template Name: Rotating Planet Front Page
 				<div id="inner-content" class="row clearfix">
 
 				    <div id="main" class="large-12 medium-12 columns clearfix" role="main">
-							<div class="large-8 columns">
-								<?php get_template_part( 'partials/loop', 'rp-main' ); ?>
-							</div>
 
-							<div class="large-4 columns">
-								<?php get_template_part( 'partials/loop', 'rp-side' ); ?>
-							</div>
+								<?php get_template_part( 'partials/loop', 'rp-main' ); ?>
+
+
 <!-- 						<hr /> -->
 
 

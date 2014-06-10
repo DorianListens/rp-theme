@@ -73,19 +73,73 @@ jQuery(document).ready(function($) {
 *
 */
 
-jQuery(function($) {
-    $('.rp-vid-link').on("click", function(event){
-        event.preventDefault();
-        $("#bigvid").fadeOut().find("iframe")
-                                    .attr('src', $(this).data("src"))
-                                    .add('#main-vid-link')
-                                    .attr('href', $(this).data('link'))
-                                    .add("#bigvid")
-                                    .fadeIn(800);
+  $('.rp-vid-link').on("click", function(event){
+      event.preventDefault();
+      var newString = "<h2>"+$(this).data('title')+"</h2><p class='lead'>"+$(this).data('excerpt')+"</p>";
+      $(".bpanel").html(newString);
+      $(".bpanel").append("<a class='button radius' href='"+$(this).data("link")+"'>See More!</a>")
+      $("#bigvid").fadeOut().find("iframe")
+                                  .attr('src', $(this).data("src"))
+                                  .add('#main-vid-link')
+                                  .attr('href', $(this).data('link'))
+                                  .add("#bigvid")
+                                  .fadeIn(800);
+      $("html, body").animate({ scrollTop: 0 }, "slow");
+      return false;
 
+  });
+
+  Foundation.utils.image_loaded($("li.active img"), function() {
+    $(document).find('.orbit-container ul li:eq(0)').addClass('active');
+    $(document).foundation('orbit', 'reflow');
+    // window.trigger("resize");
+  });
+
+  var iframe = $('#vimeoplayer')[0],
+    player = $f(iframe);
+
+    // When the player is ready, add listeners for pause, finish, and playProgress
+    player.addEvent('ready', function() {
+        player.addEvent('play', onPlay);
+
+        player.addEvent('pause', onPause);
+        player.addEvent('finish', onFinish);
+        player.addEvent('playProgress', onPlayProgress);
     });
 
-});
+    // Call the API when a button is pressed
+    $('button').bind('click', function() {
+        player.api($(this).text().toLowerCase());
+    });
+
+    function onPlay(id) {
+      console.log("play");
+
+      $("#bigvidcontainer").dimBackground();
+    }
+
+    function onPause(id) {
+        // console.log("paused");
+        $("#bigvidcontainer").undim();
+    }
+
+    function onFinish(id) {
+        // console.log('finished');
+        $.undim();
+    }
+
+    function onPlayProgress(data, id) {
+        // status.text(data.seconds + 's played');
+    }
+  // Foundation.utils.image_loaded($(".browse-slider li img"), function() {
+  //   console.log("Loaded");
+  //   $(document).foundation('orbit', 'reflow');
+  //   window.trigger("resize");
+  // })
+// jQuery(function($) {
+
+
+// });
 
 
 }); /* end of as page load scripts */

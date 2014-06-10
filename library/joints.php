@@ -127,6 +127,12 @@ function joints_scripts_and_styles() {
     // adding Foundation scripts file in the footer
     wp_enqueue_script( 'foundation-js', get_template_directory_uri() . '/library/js/foundation.min.js', array( 'jquery' ), '', true );
 
+    // adding Froogaloop in the footer
+    wp_enqueue_script( 'froogaloop2-js', get_template_directory_uri() . '/library/js/froogaloop2.min.js', array(), '', true );
+
+    // adding dim background
+    wp_enqueue_script( 'dim-background', get_template_directory_uri() . '/library/js/jquery.dim-background.min.js', array('jquery'), '', true );
+
     // register main stylesheet
     wp_enqueue_style( 'joints-stylesheet', get_template_directory_uri() . '/library/css/style.css', array(), '', 'all' );
 
@@ -364,7 +370,7 @@ function joints_filter_ptags_on_images($content){
 function joints_excerpt_more($more) {
 	global $post;
 	// edit here if you like
-return '...  ';//<a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'jointstheme') . get_the_title($post->ID).'">'. __('Read more &raquo;', 'jointstheme') .'</a>';
+return '... ';// <a class="excerpt-read-more" href="'. get_permalink($post->ID) . '" title="'. __('Read', 'jointstheme') . get_the_title($post->ID).'">'. __('More &raquo;', 'jointstheme') .'</a>';
 }
 
 /*

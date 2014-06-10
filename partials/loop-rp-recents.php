@@ -7,10 +7,10 @@
       $single_film_cats = get_the_terms( get_the_ID(), 'film_cat');
       ?>
       <div class="large-3 small-6 columns">
-          <a href="<?php the_permalink(); ?>"><?php get_video_thumb('200px');?></a>
+          <a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('video_thumb');?></a>
           <h3><?php the_title(); ?></h3>
           <p><?php the_excerpt(); ?></p>
-          <span class="right"><a href="<?php the_permalink(); ?>">Read More...</a></span>
+          <!-- <span class="right"><a href="<?php the_permalink(); ?>">Read More...</a></span> -->
       </div>
     <?php endwhile; ?>
 </div>

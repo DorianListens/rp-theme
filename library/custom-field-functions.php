@@ -5,7 +5,7 @@ function get_video_src() {
 		$video_url = get_field('video_url');
 		$oembed_endpoint = 'http://vimeo.com/api/oembed';
 		// Create the URLs
-		$xml_url = $oembed_endpoint . '.xml?url=' . rawurlencode($video_url);
+		$xml_url = $oembed_endpoint . '.xml?url=' . rawurlencode($video_url) . 'api=1&player_id=vimeoplayer';
 
 		$oembed = simplexml_load_string(curl_get($xml_url));
 		$vimeo_embed = html_entity_decode($oembed->html);
@@ -19,7 +19,7 @@ function get_video_src() {
 }
 
 function display_video() {
-	echo '<div class="flex-video vimeo widescreen"><iframe src= " ', get_video_src() ,'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
+	echo '<div class="flex-video vimeo widescreen"><iframe id="vimeoplayer" src= " ', get_video_src() ,'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
 }
 
 function display_film_info() {
@@ -41,9 +41,9 @@ function display_film_info() {
 		$website_link = '<a href="'.$official_website.'" target="blank">'.$official_website.'</a>';
 	}
 
-	echo '<h5>Official Website:</h5> <p>'.$website_link.'</p>';
-	echo "<h5>Credits:</h5> <p>", $credits, "</p>";
-	echo '<h5>Running Time:</h5> <p>', $running_time, "</p>";
+	echo '<h4>Official Website:</h4> <p>'.$website_link.'</p>';
+	echo "<h4>Credits:</h4> <p>", $credits, "</p>";
+	echo '<h4>Running Time:</h4> <p>', $running_time, "</p>";
 
 }
 
@@ -61,8 +61,8 @@ function curl_get($url) {
 
 // Vimeo Thumbnails
 function video_thumb() {
-	if ( get_field ('video_url') ) {
-		$video_url = get_field ('video_url');
+	if ( get_field('video_url') ) {
+		$video_url = get_field('video_url');
 	}
 	$oembed_endpoint = 'http://vimeo.com/api/oembed';
 	$xml_url = $oembed_endpoint . '.xml?url=' . rawurlencode($video_url);
@@ -86,7 +86,7 @@ function save_vimeo_thumb( $post_id, $post ) {
 	if ( ! has_post_thumbnail($post_id)) {
 
 	  // If this isn't a film, don't update.
-	  if ( $slug = $_POST['post_type'] ) {
+	  if ( $slug == $_POST['post_type'] ) {
 
 	  // - Update the post's metadata.
 			require_once(ABSPATH . 'wp-admin/includes/media.php');
@@ -97,7 +97,7 @@ function save_vimeo_thumb( $post_id, $post ) {
 			$desc = "Film Thumbnail " . $post_id;
 			$tmp = download_url( $url );
 
-	    $file_array['name'] = $post->post_name . '-thumb.jpg';
+	    $file_array['name'] = $post_id . '-thumb.jpg';
 	    $file_array['tmp_name'] = $tmp;
 	    // If error storing temporarily, unlink
 	    if ( is_wp_error( $tmp ) ) {
@@ -110,9 +110,11 @@ function save_vimeo_thumb( $post_id, $post ) {
 	    if ( is_wp_error($id) ) {@unlink($file_array['tmp_name']);}
 
 	    add_post_meta( $post_id, '_thumbnail_id', $attachment_id, true );
+			// set_post_thumbnail( $post, $attachment_id);
 		}
 	}
 }
 add_action( 'save_post', 'save_vimeo_thumb' );
 
-add_image_size( 'video_thumb', 200);
+add_image_size( 'video_thumb', 350, 220, true);
+add_image_size( "large_vid", 400, 240, true);

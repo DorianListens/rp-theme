@@ -1,19 +1,29 @@
-<div class="rp-section">
-  <div class="row">
-    <ul data-orbit>
+<!-- <div class="rp-section "> -->
+  <!-- <div class="row"> -->
+    <ul data-orbit class="browse-slider">
       <?php
       //Single Query
       $browse_args = array( 'post_type' => 'rp_films', 'posts_per_page' => 3 );
       $film_loop = new WP_Query( $browse_args );
+      // $count = 0
       while ($film_loop->have_posts()) : $film_loop->the_post();
       $single_film_cats = get_the_terms( get_the_ID(), 'film_cat');
+
       ?>
-        <li>
+      <?php // echo $count
+
+         if (! $count) {
+            echo '<li class="active">';
+          } else {
+            echo "<li>";
+        }
+        ?>
+          <!-- <li class="active"> -->
           <div class="row">
-            <div class="large-5 small-6 columns">
-              <?php get_video_thumb('400px'); ?>
+            <div class="large-6 small-6 columns">
+              <?php the_post_thumbnail('large'); ?>
             </div>
-            <div class="large-7 small-6 columns">
+            <div class="large-6 small-6 columns end">
               <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
                 <header class="article-header">
@@ -34,7 +44,8 @@
             </div>
           </div>
         </li>
+        <?php $count++; ?>
       <?php endwhile; ?>
     </ul>
-  </div>
-</div>
+  <!-- </div>
+</div> -->
