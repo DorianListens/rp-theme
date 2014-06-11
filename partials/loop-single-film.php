@@ -20,7 +20,8 @@
 
 			    <section class="entry-content clearfix" itemprop="articleBody">
 					<?php the_content(); ?>
-					<a class="button radius" href="#">Watch Full Film Now!</a>
+					<a class="button radius rp-vid-link" href="#" data-src="<?php get_video_src();?>">Full Film</a>
+					<?php related_clips(); ?>
 				</section><!-- end article section -->
 				</div>
 				<div class="large-4 small-12 columns">

@@ -75,9 +75,12 @@ jQuery(document).ready(function($) {
 
   $('.rp-vid-link').on("click", function(event){
       event.preventDefault();
-      var newString = "<h2>"+$(this).data('title')+"</h2><p class='lead'>"+$(this).data('excerpt')+"</p>";
-      $(".bpanel").html(newString);
-      $(".bpanel").append("<a class='button radius' href='"+$(this).data("link")+"'>See More!</a>")
+      if ($(".bpanel")) {
+        var newString = "<h2>"+$(this).data('title')+"</h2><p class='lead'>"+$(this).data('excerpt')+"</p>";
+        $(".bpanel").html(newString);
+        $(".bpanel").append("<a class='button radius' href='"+$(this).data("link")+"'>See More!</a>");
+      }
+
       $("#bigvid").fadeOut().find("iframe")
                                   .attr('src', $(this).data("src"))
                                   .add('#main-vid-link')

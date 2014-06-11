@@ -18,6 +18,18 @@ function get_video_src() {
 	echo $video_src;
 }
 
+function src_from_url($video_url) {
+	$oembed_endpoint = 'http://vimeo.com/api/oembed';
+	// Create the URLs
+	$xml_url = $oembed_endpoint . '.xml?url=' . rawurlencode($video_url) . 'api=1&player_id=vimeoplayer';
+
+	$oembed = simplexml_load_string(curl_get($xml_url));
+	$vimeo_embed = html_entity_decode($oembed->html);
+	preg_match('/src="([^"]+)"/', $vimeo_embed, $match);
+	$video_src = $match[1];
+	return $video_src;
+}
+
 function display_video() {
 	echo '<div class="flex-video vimeo widescreen"><iframe id="vimeoplayer" src= " ', get_video_src() ,'" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe></div>';
 }
@@ -45,6 +57,27 @@ function display_film_info() {
 	echo "<h4>Credits:</h4> <p>", $credits, "</p>";
 	echo '<h4>Running Time:</h4> <p>', $running_time, "</p>";
 
+}
+
+function related_clips() {
+	if( have_rows('related_clips') ):
+
+	 	// loop through the rows of data
+	    while ( have_rows('related_clips') ) : the_row();
+
+	        // display a sub field value
+	        $url = get_sub_field('vimeo_url');
+					$src = src_from_url($url);
+					$title = get_sub_field('clip_title');
+					echo '<br /><a href="#" class="button radius rp-vid-link" data-src="'.$src.'">'.$title.'</a>';
+
+	    endwhile;
+
+	else :
+
+	    // no rows found
+
+	endif;
 }
 
 // Curl helper function
