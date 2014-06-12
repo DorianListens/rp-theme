@@ -61,22 +61,31 @@ function display_film_info() {
 
 function related_clips() {
 	if( have_rows('related_clips') ):
+		$i = 0;
+		echo "<h4>Related Clips:</h4>";
 
 	 	// loop through the rows of data
 	    while ( have_rows('related_clips') ) : the_row();
+					$string = $i.'_clip_thumb';
 
 	        // display a sub field value
 	        $url = get_sub_field('vimeo_url');
 					$src = src_from_url($url);
 					$title = get_sub_field('clip_title');
-					echo '<br /><a href="#" class="button radius rp-vid-link" data-src="'.$src.'">'.$title.'</a>';
-
+					$thumb = get_sub_field('clip_image');
+					$short_desc = get_sub_field('short_desc');
+					// $thumb = get_post_meta($post->ID, $string);
+					echo '<div class="row"><a href="#" class="rp-vid-link" data-src="'.$src.'">';
+					echo '<div class="large-4 columns"><img src="'.$thumb.'"></div>';
+					echo '<div class="large-8 columns"><h5>'.$title.'</h5>'.$short_desc.'</div>';
+					echo "</a></div><br />";
+					// echo $i;
+					$i++;
 	    endwhile;
 
 	else :
 
 	    // no rows found
-
 	endif;
 }
 
@@ -104,6 +113,15 @@ function video_thumb() {
 
 	return $thumb;
 
+}
+
+function thumb_from_url($video_url) {
+	$oembed_endpoint = 'http://vimeo.com/api/oembed';
+	$xml_url = $oembed_endpoint . '.xml?url=' . rawurlencode($video_url);
+	$oembed = simplexml_load_string(curl_get($xml_url));
+	$thumb = $oembed->thumbnail_url;
+
+	return $thumb;
 }
 
 function get_video_thumb($width) {
@@ -144,6 +162,44 @@ function save_vimeo_thumb( $post_id, $post ) {
 
 	    add_post_meta( $post_id, '_thumbnail_id', $attachment_id, true );
 			// set_post_thumbnail( $post, $attachment_id);
+
+		  // $clips = get_field('related_clips');
+			// if ($clips) {
+			// 	$i = 0;
+			// 	foreach ($clips as $clip) {
+
+			if (have_rows('related_clips')) :
+				$i = 0;
+				while (have_rows('related_clips')) : the_row();
+					$thumb = thumb_from_url(get_sub_field('vimeo_url'));
+					$desc = "Clip Thumbnail " . get_sub_field('clip_title');
+					$tmp2 = download_url( $thumb );
+
+					$file_array['name'] = get_sub_field('clip_title') . '-thumb.jpg';
+					$file_array['tmp_name'] = $tmp2;
+					// If error storing temporarily, unlink
+					if ( is_wp_error( $tmp ) ) {
+							@unlink($file_array['tmp_name']);
+							$file_array['tmp_name'] = '';
+					}
+					// do the validation and storage stuff
+					$clip_thumb = media_handle_sideload( $file_array, $post_id, $desc );
+					// If error storing permanently, unlink
+					if ( is_wp_error($id) ) {@unlink($file_array['tmp_name']);}
+
+
+					$src = wp_get_attachment_url( $clip_thumb );
+
+					// echo $src;
+					// update_sub_field('clip_thumb', $src);
+				  // $string = $i.'_clip_thumb';
+
+					// add_post_meta($string, $src, $post_id );
+					// $i++;
+			// 	}
+			// }
+		endwhile;
+	endif;
 		}
 	}
 }
