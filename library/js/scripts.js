@@ -70,7 +70,6 @@ jQuery(document).ready(function($) {
 *
 * Switches vimeo source of main front page video player using data-attributes
 *
-*
 */
 
   $('.rp-vid-link').on("click", function(event){
@@ -91,6 +90,40 @@ jQuery(document).ready(function($) {
       return false;
 
   });
+
+  $(".f-share").click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var href = $(e.target).data('href');
+    // console.log("Clicked FB thing", href);
+    FB.ui(
+      {
+        method: 'share',
+        href: href,
+      },
+      function(response) {
+        if (response && !response.error_code) {
+          // alert('Posting completed.');
+        } else {
+          // alert('Error while posting.');
+        }
+      }
+    );
+  });
+  $(".t-share").click(function(e){
+    e.preventDefault();
+    e.stopPropagation();
+    var href = encodeURIComponent($(e.target).data('href'));
+    var url = "https://twitter.com/share?url="+href;
+    var windowName = "Twitter";
+    popupwindow(url, windowName, 400, 400);
+    // window.open(url, windowName, "height=400,width=400");
+  });
+  function popupwindow(url, title, w, h) {
+    var left = (screen.width/2)-(w/2);
+    var top = (screen.height/2)-(h/2);
+    window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
+  }
 
   Foundation.utils.image_loaded($("li.active img"), function() {
     $(document).find('.orbit-container ul li:eq(0)').addClass('active');
@@ -134,16 +167,6 @@ jQuery(document).ready(function($) {
     function onPlayProgress(data, id) {
         // status.text(data.seconds + 's played');
     }
-  // Foundation.utils.image_loaded($(".browse-slider li img"), function() {
-  //   console.log("Loaded");
-  //   $(document).foundation('orbit', 'reflow');
-  //   window.trigger("resize");
-  // })
-// jQuery(function($) {
-
-
-// });
-
 
 }); /* end of as page load scripts */
 

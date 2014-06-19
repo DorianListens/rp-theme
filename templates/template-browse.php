@@ -55,7 +55,7 @@ Template Name: Rotating Planet Browse Page
 								$single_film_cats = get_the_terms( get_the_ID(), 'film_cat');
 								?>
 								<li class="film-item <?php if ($single_film_cats) foreach ($single_film_cats as $cat) echo $cat->slug . ' '; ?>">
-									<span data-tooltip class="has-tip tip-right" title="<h2 class='tip-title'><?php the_title(); ?></h2><p><?php the_excerpt(); ?></p>">
+									<span data-tooltip class="has-tip tip-bottom" title="<h2 class='tip-title'><?php the_title(); ?></h2><p><?php the_excerpt(); ?></p>">
 										<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('large_vid');?><h4 class="browse-film-title"><?php the_title(); ?></h4></a>
 									</span>
 								</li>

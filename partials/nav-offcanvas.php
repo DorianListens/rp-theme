@@ -1,4 +1,4 @@
-<div class="large-12 columns show-for-medium-up">
+<div class="large-12 columns">
 	<div class="" style="margin-top:20px;">
 
 		<!-- If you want to use the more traditional "fixed" navigation.
@@ -9,7 +9,12 @@
 				<!-- Title Area -->
 				<li class="name">
 					<!-- <i class="fa fa-globe fa-lg"></i>  -->
-					<span class="main-head"><a href="<?php echo home_url(); ?>" rel="nofollow"><?php bloginfo('name'); ?></a></span>
+					<span class="main-head">
+						<a href="<?php echo home_url(); ?>" rel="nofollow">
+							<img id="headerlogo" src="<?php echo get_stylesheet_directory_uri(); ?>/library/images/rp-logo-white-shadow.png" />
+							<?php bloginfo('name'); ?>
+						</a>
+					</span>
 				</li>
 				<li class="toggle-topbar menu-icon">
 					<a href="#"><span>Menu</span></a>
@@ -22,7 +27,7 @@
 	</div>
 </div>
 
-<div class="large-12 columns show-for-small-only">
+<!-- <div class="large-12 columns show-for-small-only">
 	<div class="contain-to-grid">
 		<nav class="tab-bar">
 			<section class="middle tab-bar-section">
@@ -42,4 +47,4 @@
 	</ul>
 </aside>
 
-<a class="exit-off-canvas"></a>
+<a class="exit-off-canvas"></a> -->

@@ -38,6 +38,24 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<div id="fb-root"></div>
+<script>
+ window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '248754798657889',
+          xfbml      : true,
+          version    : 'v2.0'
+        });
+      };
+
+(function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <div class="off-canvas-wrap">
 	<div class="inner-wrap">

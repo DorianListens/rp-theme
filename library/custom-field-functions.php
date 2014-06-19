@@ -162,15 +162,20 @@ function save_vimeo_thumb( $post_id, $post ) {
 
 	    add_post_meta( $post_id, '_thumbnail_id', $attachment_id, true );
 			// set_post_thumbnail( $post, $attachment_id);
+		}
+	}
+}
+add_action( 'save_post', 'save_vimeo_thumb' );
 
-		  // $clips = get_field('related_clips');
-			// if ($clips) {
-			// 	$i = 0;
-			// 	foreach ($clips as $clip) {
+function save_related_post_thumbs($post_id) {
+	$slug = 'rp_films';
 
-			if (have_rows('related_clips')) :
-				$i = 0;
-				while (have_rows('related_clips')) : the_row();
+	if ( $slug == $_POST['post_type'] ) :
+
+		if (have_rows('related_clips')) :
+			$i = 0;
+			while (have_rows('related_clips')) : the_row();
+				if (! get_sub_field('clip_image')) {
 					$thumb = thumb_from_url(get_sub_field('vimeo_url'));
 					$desc = "Clip Thumbnail " . get_sub_field('clip_title');
 					$tmp2 = download_url( $thumb );
@@ -186,24 +191,15 @@ function save_vimeo_thumb( $post_id, $post ) {
 					$clip_thumb = media_handle_sideload( $file_array, $post_id, $desc );
 					// If error storing permanently, unlink
 					if ( is_wp_error($id) ) {@unlink($file_array['tmp_name']);}
-
-
 					$src = wp_get_attachment_url( $clip_thumb );
 
-					// echo $src;
-					// update_sub_field('clip_thumb', $src);
-				  // $string = $i.'_clip_thumb';
-
-					// add_post_meta($string, $src, $post_id );
-					// $i++;
-			// 	}
-			// }
-		endwhile;
+			}
+			endwhile;
+		endif;
 	endif;
-		}
-	}
+
 }
-add_action( 'save_post', 'save_vimeo_thumb' );
+add_action( 'save_post', 'save_related_post_thumbs' );
 
 add_image_size( 'video_thumb', 350, 220, true);
 add_image_size( "large_vid", 400, 240, true);

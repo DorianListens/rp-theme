@@ -8736,7 +8736,7 @@ article.page {
   background-repeat: no-repeat;
 }
 
-/* line 53, ../scss/_rp_custom.scss */
+/* line 54, ../scss/_rp_custom.scss */
 .footer-image {
   min-height: 150px;
   height: 150px;
@@ -8746,25 +8746,7 @@ article.page {
   background-repeat: no-repeat;
 }
 
-/* line 61, ../scss/_rp_custom.scss */
-.logo-image {
-  height: 248px;
-  width: 168px;
-  background: url(../images/rp-logo-image.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-/* line 68, ../scss/_rp_custom.scss */
-.ari img {
-  margin-top: -30px;
-  margin-left: -30px;
-  width: 150%;
-  max-width: none;
-  display: inline-block;
-}
-
-/* line 76, ../scss/_rp_custom.scss */
+/* line 77, ../scss/_rp_custom.scss */
 .source-org {
   position: relative;
   left: -20px;
@@ -8778,7 +8760,7 @@ article.page {
   -moz-transform: skew(-30deg);
   transform: skew(-30deg);
 }
-/* line 89, ../scss/_rp_custom.scss */
+/* line 90, ../scss/_rp_custom.scss */
 .source-org .text {
   padding-top: 5px;
   padding-left: 60px;
@@ -8787,28 +8769,28 @@ article.page {
   transform: skew(30deg);
 }
 
-/* line 97, ../scss/_rp_custom.scss */
+/* line 98, ../scss/_rp_custom.scss */
 .tip-title {
   color: #fff;
   line-height: 2rem;
 }
 
-/* line 103, ../scss/_rp_custom.scss */
+/* line 104, ../scss/_rp_custom.scss */
 .orbit-container {
   min-height: 200px;
 }
 
-/* line 106, ../scss/_rp_custom.scss */
+/* line 107, ../scss/_rp_custom.scss */
 .tooltip {
   padding-left: 1rem;
   max-width: 300px !important;
 }
-/* line 109, ../scss/_rp_custom.scss */
+/* line 110, ../scss/_rp_custom.scss */
 .tooltip p {
   line-height: 1.25rem;
 }
 
-/* line 114, ../scss/_rp_custom.scss */
+/* line 115, ../scss/_rp_custom.scss */
 .browse-film-title {
   position: absolute;
   bottom: 1.25rem;
@@ -8819,7 +8801,7 @@ article.page {
   padding: 5px;
 }
 
-/* line 123, ../scss/_rp_custom.scss */
+/* line 124, ../scss/_rp_custom.scss */
 .slider-film-type {
   position: absolute;
   top: 0px;
@@ -8831,35 +8813,37 @@ article.page {
   padding: 5px;
 }
 
-/* line 139, ../scss/_rp_custom.scss */
+/* line 140, ../scss/_rp_custom.scss */
 section[itemprop="articleBody"] p {
   line-height: 1.25rem;
 }
 
-/* line 143, ../scss/_rp_custom.scss */
+/* line 144, ../scss/_rp_custom.scss */
 .panel a {
   color: #000;
 }
-/* line 145, ../scss/_rp_custom.scss */
+/* line 146, ../scss/_rp_custom.scss */
 .panel a:visited {
   color: #000;
 }
 
-/* line 152, ../scss/_rp_custom.scss */
+/* line 153, ../scss/_rp_custom.scss */
 dl#filter.sub-nav dd, dl#filter.sub-nav dt, dl#filter.sub-nav a {
+  font-size: 1.125rem;
+  font-family: "Big-noodle";
   color: black !important;
 }
-/* line 154, ../scss/_rp_custom.scss */
+/* line 157, ../scss/_rp_custom.scss */
 dl#filter.sub-nav dd a:hover, dl#filter.sub-nav dt a:hover, dl#filter.sub-nav a a:hover {
   color: white !important;
 }
 
-/* line 160, ../scss/_rp_custom.scss */
+/* line 163, ../scss/_rp_custom.scss */
 .filter li > a.active {
   background: #bbbbbb;
 }
 
-/* line 163, ../scss/_rp_custom.scss */
+/* line 166, ../scss/_rp_custom.scss */
 .img-circular {
   margin: auto;
   width: 200px;
@@ -8872,52 +8856,69 @@ dl#filter.sub-nav dd a:hover, dl#filter.sub-nav dt a:hover, dl#filter.sub-nav a 
   -moz-border-radius: 100px;
 }
 
-/* line 175, ../scss/_rp_custom.scss */
+/* line 178, ../scss/_rp_custom.scss */
 img.inside-circle {
   opacity: 0;
   filter: alpha(opacity=0);
 }
 
-/* line 190, ../scss/_rp_custom.scss */
+/* line 193, ../scss/_rp_custom.scss */
 article {
   margin-bottom: 50px;
 }
 
-/* line 194, ../scss/_rp_custom.scss */
+/* line 197, ../scss/_rp_custom.scss */
 .rp-section {
   padding-bottom: 0.625rem;
   margin-bottom: 0.625rem;
 }
 
-/* line 199, ../scss/_rp_custom.scss */
+/* line 202, ../scss/_rp_custom.scss */
 span.main-head {
   font-weight: normal;
   color: #fff;
   width: 50%;
   padding: 0 15px;
   line-height: 45px;
-  font-size: 4.375rem;
+  font-size: 2.5rem;
   font-family: "Big-noodle";
   margin: 0;
   text-shadow: 2px 2px 2px #000;
 }
+@media only screen and (min-width: 40.063em) {
+  /* line 202, ../scss/_rp_custom.scss */
+  span.main-head {
+    font-size: 4.375rem;
+  }
+}
 
-/* line 212, ../scss/_rp_custom.scss */
+/* line 219, ../scss/_rp_custom.scss */
+img#headerlogo {
+  height: 30px;
+}
+@media only screen and (min-width: 40.063em) {
+  /* line 219, ../scss/_rp_custom.scss */
+  img#headerlogo {
+    height: 100px;
+  }
+}
+
+/* line 227, ../scss/_rp_custom.scss */
 .rp-slider > li {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
 
-/* line 217, ../scss/_rp_custom.scss */
+/* line 232, ../scss/_rp_custom.scss */
 .browse-slider > li {
   padding-right: 1.875rem;
 }
-/* line 219, ../scss/_rp_custom.scss */
+/* line 234, ../scss/_rp_custom.scss */
 .browse-slider > li p {
   line-height: 1.25rem;
 }
 
-/* line 224, ../scss/_rp_custom.scss */
+/* line 239, ../scss/_rp_custom.scss */
 .bpanel {
   border-style: solid;
   border-width: 1px;
@@ -8949,21 +8950,21 @@ span.main-head {
 .bpanel h1.subheader, .bpanel h2.subheader, .bpanel h3.subheader, .bpanel h4.subheader, .bpanel h5.subheader, .bpanel h6.subheader {
   line-height: 1.4;
 }
-/* line 228, ../scss/_rp_custom.scss */
+/* line 243, ../scss/_rp_custom.scss */
 .bpanel p {
   color: #fff;
 }
-/* line 230, ../scss/_rp_custom.scss */
+/* line 245, ../scss/_rp_custom.scss */
 .bpanel p.lead {
   line-height: 1.25rem;
   font-size: 1.125rem;
 }
-/* line 235, ../scss/_rp_custom.scss */
+/* line 250, ../scss/_rp_custom.scss */
 .bpanel h1, .bpanel h2, .bpanel h3, .bpanel h4, .bpanel h5, .bpanel h6 {
   color: #fff;
 }
 
-/* line 239, ../scss/_rp_custom.scss */
+/* line 254, ../scss/_rp_custom.scss */
 .cpanel {
   border-style: solid;
   border-width: 1px;
@@ -8995,30 +8996,79 @@ span.main-head {
 .cpanel h1.subheader, .cpanel h2.subheader, .cpanel h3.subheader, .cpanel h4.subheader, .cpanel h5.subheader, .cpanel h6.subheader {
   line-height: 1.4;
 }
-/* line 244, ../scss/_rp_custom.scss */
+/* line 259, ../scss/_rp_custom.scss */
 .cpanel a {
   color: #000;
 }
 
-/* line 248, ../scss/_rp_custom.scss */
-.top-bar .name {
-  margin: 23px 0;
+@media only screen and (min-width: 40.063em) {
+  /* line 263, ../scss/_rp_custom.scss */
+  .top-bar .name {
+    margin: 10px 0;
+  }
 }
 
-/* line 252, ../scss/_rp_custom.scss */
-.top-bar .menu-item a {
-  font-size: 1.5625rem;
-  padding: 0 50px !important;
-}
-/* line 256, ../scss/_rp_custom.scss */
-.top-bar .menu-item.lang-item a {
-  padding: 0 10px !important;
+@media only screen and (min-width: 40.063em) {
+  /* line 270, ../scss/_rp_custom.scss */
+  .top-bar .menu-item a {
+    font-size: 1.5625rem;
+    padding: 0 50px !important;
+  }
+  /* line 274, ../scss/_rp_custom.scss */
+  .top-bar .menu-item.lang-item a {
+    padding: 0 10px !important;
+  }
 }
 
-/* line 261, ../scss/_rp_custom.scss */
+/* line 280, ../scss/_rp_custom.scss */
 .fp-excerpt p {
   line-height: 1.0625rem;
   font-size: 0.9375rem;
+}
+
+/* line 285, ../scss/_rp_custom.scss */
+.blog-row {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 81.25rem;
+  background: #aaa;
+  box-shadow: 2px 2px 2px #666;
+}
+/* line 176, ../scss/foundation/components/_global.scss */
+.blog-row:before, .blog-row:after {
+  content: " ";
+  display: table;
+}
+/* line 177, ../scss/foundation/components/_global.scss */
+.blog-row:after {
+  clear: both;
+}
+/* line 289, ../scss/_rp_custom.scss */
+.blog-row:hover {
+  background: #999;
+  box-shadow: 4px 4px 4px #666;
+}
+/* line 292, ../scss/_rp_custom.scss */
+.blog-row:hover img {
+  opacity: 0.7;
+}
+
+/* line 297, ../scss/_rp_custom.scss */
+.blog-image {
+  padding-left: 0;
+  padding-right: 0;
+  width: 50%;
+  float: left;
+}
+
+/* line 303, ../scss/_rp_custom.scss */
+footer.article-footer {
+  float: right;
+  position: relative;
+  bottom: 0px;
 }
 
 /*
