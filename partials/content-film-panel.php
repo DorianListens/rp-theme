@@ -19,26 +19,32 @@
         }
         ?>
           <!-- <li class="active"> -->
-          <div class="row">
-            <div class="large-6 small-6 columns">
-              <?php the_post_thumbnail('large'); ?>
+          <div class="blog-row" data-equalizer>
+            <div class="blog-image" data-equalizer-watch>
+              <a href="<?php the_permalink(); ?>">
+                <?php the_post_thumbnail('large'); ?>
+              </a>
             </div>
-            <div class="large-6 small-6 columns end">
+            <div class="large-6 small-6 columns" data-equalizer-watch>
               <article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?> role="article" itemscope itemtype="http://schema.org/BlogPosting">
 
                 <header class="article-header">
-                  <h3 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h3>
+                  <h2><a href="<?php the_permalink() ?>" rel="bookmark" class="article-link" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a></h2>
+                  <p>Filed Under: <?php if ($single_film_cats) foreach ($single_film_cats as $cat) echo $cat->name . ' '; ?></p>
                 </header> <!-- end article header -->
 
                 <section class="entry-content clearfix" itemprop="articleBody">
                   <?php the_content(); ?>
                 </section> <!-- end article section -->
 
-                Filed Under: <?php if ($single_film_cats) foreach ($single_film_cats as $cat) echo $cat->name . ' '; ?>
-                <span class="right"><a href="<?php the_permalink(); ?>">Read More...</a></span>
 
-                <footer class="article-footer">
+                <footer class="article-footer text-right">
                   <p class="tags"><?php the_tags('<span class="tags-title">' . __('Tags:', 'jointstheme') . '</span> ', ', ', ''); ?></p>
+
+                  <p><a href="<?php the_permalink(); ?>">Read More...</a></p>
+                  <i class="fa fa-facebook-square fa-2x f-share" data-href="<?php the_permalink() ?>"></i>
+                  <i class="fa fa-twitter fa-2x t-share" data-href="<?php the_permalink() ?>"></i>
+
                 </footer> <!-- end article footer -->
               </article><!-- end article -->
             </div>

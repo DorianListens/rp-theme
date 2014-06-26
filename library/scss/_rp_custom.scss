@@ -2,7 +2,7 @@
 
 
  #main {
-   background: #7d7d7d;
+   background: #adadad;
    padding-top: 20px;
 
  }
@@ -44,7 +44,7 @@ article.page {
 .header-image {
   min-height: 150px;
   height: 150px;
-  background: url(../images/banner2b.jpg);
+  background: url(../images/banner3.jpg);
   // background: #fff;
   background-size: cover;
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@ article.page {
   min-height: 150px;
   height: 150px;
   padding-top: 45px;
-  background: url(../images/rp-footer-image.jpg);
+  background: url(../images/footer3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -151,7 +151,7 @@ section[itemprop="articleBody"] p{
 dl#filter.sub-nav {
 
  & dd, dt, a {
-  font-size: rem-calc(18);
+  font-size: rem-calc(25);
   font-family: $header-font-family;
   color: #000!important;
   & a:hover {
@@ -213,7 +213,7 @@ span.main-head{
 
   font-family: $header-font-family;
   margin: 0;
-  text-shadow: 2px 2px 2px #000;
+  text-shadow: 4px 4px 4px #000;
 }
 
 img#headerlogo {
@@ -230,7 +230,7 @@ img#headerlogo {
 }
 
 .browse-slider > li {
-  padding-right: rem-calc(30);
+  // padding-right: rem-calc(30);
   & p {
     line-height: 1.25rem;
   }
@@ -255,11 +255,12 @@ img#headerlogo {
   @include panel();
 
   border-color: #666;
-  background: #7d7d7d;
+  background: #adadad;
   a {
     color: #000;
   }
 }
+
 .top-bar .name {
   @media only screen and (min-width: 40.063em) {
     margin: 10px 0;
@@ -284,17 +285,22 @@ img#headerlogo {
 
 .blog-row {
   @include grid-row();
-  background: #aaa;
+  background: #ccc;
   box-shadow: 2px 2px 2px #666;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  overflow: hidden;
   &:hover {
-    background: #999;
+    background: #bbb;
     box-shadow: 4px 4px 4px #666;
     img {
-      opacity: 0.7;
+      opacity: 0.8;
     }
   }
 }
 .blog-image {
+  overflow: hidden;
   @include grid-column(
     $columns: 6,
     $collapse: true
@@ -302,6 +308,31 @@ img#headerlogo {
 }
 footer.article-footer {
   float: right;
-  position: relative;
-  bottom: 0px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: rem-calc(10);
+  i {
+    cursor: pointer;
+  }
+}
+
+.share-links {
+  padding-top: 10px;
+  float: right;
+  display: inline-block;
+  cursor: pointer;
+}
+a.article-link {
+  text-shadow: 1px 1px 1px #000;
+}
+.single-title {
+  display: inline-block;
+}
+
+#lightswitch {
+  z-index: 999;
+  position: absolute;
+  // right: -50px;
+  // bottom: 25px;
 }

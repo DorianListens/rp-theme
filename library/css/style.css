@@ -8676,7 +8676,7 @@ th.hide-for-touch {
 
 /* line 4, ../scss/_rp_custom.scss */
 #main {
-  background: #7d7d7d;
+  background: #adadad;
   padding-top: 20px;
 }
 
@@ -8731,7 +8731,7 @@ article.page {
 .header-image {
   min-height: 150px;
   height: 150px;
-  background: url(../images/banner2b.jpg);
+  background: url(../images/banner3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -8741,7 +8741,7 @@ article.page {
   min-height: 150px;
   height: 150px;
   padding-top: 45px;
-  background: url(../images/rp-footer-image.jpg);
+  background: url(../images/footer3.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -8829,7 +8829,7 @@ section[itemprop="articleBody"] p {
 
 /* line 153, ../scss/_rp_custom.scss */
 dl#filter.sub-nav dd, dl#filter.sub-nav dt, dl#filter.sub-nav a {
-  font-size: 1.125rem;
+  font-size: 1.5625rem;
   font-family: "Big-noodle";
   color: black !important;
 }
@@ -8883,7 +8883,7 @@ span.main-head {
   font-size: 2.5rem;
   font-family: "Big-noodle";
   margin: 0;
-  text-shadow: 2px 2px 2px #000;
+  text-shadow: 4px 4px 4px #000;
 }
 @media only screen and (min-width: 40.063em) {
   /* line 202, ../scss/_rp_custom.scss */
@@ -8909,10 +8909,6 @@ img#headerlogo {
   padding-right: 2.5rem;
 }
 
-/* line 232, ../scss/_rp_custom.scss */
-.browse-slider > li {
-  padding-right: 1.875rem;
-}
 /* line 234, ../scss/_rp_custom.scss */
 .browse-slider > li p {
   line-height: 1.25rem;
@@ -8973,7 +8969,7 @@ img#headerlogo {
   padding: 1.25rem;
   background: #f2f2f2;
   border-color: #666;
-  background: #7d7d7d;
+  background: #adadad;
 }
 /* line 52, ../scss/foundation/components/_panels.scss */
 .cpanel > :first-child {
@@ -9002,31 +8998,31 @@ img#headerlogo {
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 263, ../scss/_rp_custom.scss */
+  /* line 264, ../scss/_rp_custom.scss */
   .top-bar .name {
     margin: 10px 0;
   }
 }
 
 @media only screen and (min-width: 40.063em) {
-  /* line 270, ../scss/_rp_custom.scss */
+  /* line 271, ../scss/_rp_custom.scss */
   .top-bar .menu-item a {
     font-size: 1.5625rem;
     padding: 0 50px !important;
   }
-  /* line 274, ../scss/_rp_custom.scss */
+  /* line 275, ../scss/_rp_custom.scss */
   .top-bar .menu-item.lang-item a {
     padding: 0 10px !important;
   }
 }
 
-/* line 280, ../scss/_rp_custom.scss */
+/* line 281, ../scss/_rp_custom.scss */
 .fp-excerpt p {
   line-height: 1.0625rem;
   font-size: 0.9375rem;
 }
 
-/* line 285, ../scss/_rp_custom.scss */
+/* line 286, ../scss/_rp_custom.scss */
 .blog-row {
   width: 100%;
   margin-left: auto;
@@ -9034,8 +9030,12 @@ img#headerlogo {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 81.25rem;
-  background: #aaa;
+  background: #ccc;
   box-shadow: 2px 2px 2px #666;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  overflow: hidden;
 }
 /* line 176, ../scss/foundation/components/_global.scss */
 .blog-row:before, .blog-row:after {
@@ -9046,29 +9046,60 @@ img#headerlogo {
 .blog-row:after {
   clear: both;
 }
-/* line 289, ../scss/_rp_custom.scss */
+/* line 294, ../scss/_rp_custom.scss */
 .blog-row:hover {
-  background: #999;
+  background: #bbb;
   box-shadow: 4px 4px 4px #666;
 }
-/* line 292, ../scss/_rp_custom.scss */
+/* line 297, ../scss/_rp_custom.scss */
 .blog-row:hover img {
-  opacity: 0.7;
+  opacity: 0.8;
 }
 
-/* line 297, ../scss/_rp_custom.scss */
+/* line 302, ../scss/_rp_custom.scss */
 .blog-image {
+  overflow: hidden;
   padding-left: 0;
   padding-right: 0;
   width: 50%;
   float: left;
 }
 
-/* line 303, ../scss/_rp_custom.scss */
+/* line 309, ../scss/_rp_custom.scss */
 footer.article-footer {
   float: right;
-  position: relative;
-  bottom: 0px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding-right: 0.625rem;
+}
+/* line 315, ../scss/_rp_custom.scss */
+footer.article-footer i {
+  cursor: pointer;
+}
+
+/* line 320, ../scss/_rp_custom.scss */
+.share-links {
+  padding-top: 10px;
+  float: right;
+  display: inline-block;
+  cursor: pointer;
+}
+
+/* line 326, ../scss/_rp_custom.scss */
+a.article-link {
+  text-shadow: 1px 1px 1px #000;
+}
+
+/* line 329, ../scss/_rp_custom.scss */
+.single-title {
+  display: inline-block;
+}
+
+/* line 333, ../scss/_rp_custom.scss */
+#lightswitch {
+  z-index: 999;
+  position: absolute;
 }
 
 /*

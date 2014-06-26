@@ -71,102 +71,121 @@ jQuery(document).ready(function($) {
 * Switches vimeo source of main front page video player using data-attributes
 *
 */
+  if (matchMedia(Foundation.media_queries['medium']).matches){
 
-  $('.rp-vid-link').on("click", function(event){
-      event.preventDefault();
-      if ($(".bpanel")) {
-        var newString = "<h2>"+$(this).data('title')+"</h2><p class='lead'>"+$(this).data('excerpt')+"</p>";
-        $(".bpanel").html(newString);
-        $(".bpanel").append("<a class='button radius' href='"+$(this).data("link")+"'>See More!</a>");
-      }
 
-      $("#bigvid").fadeOut().find("iframe")
-                                  .attr('src', $(this).data("src"))
-                                  .add('#main-vid-link')
-                                  .attr('href', $(this).data('link'))
-                                  .add("#bigvid")
-                                  .fadeIn(800);
-      $("html, body").animate({ scrollTop: 0 }, "slow");
-      return false;
 
-  });
-
-  $(".f-share").click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    var href = $(e.target).data('href');
-    // console.log("Clicked FB thing", href);
-    FB.ui(
-      {
-        method: 'share',
-        href: href,
-      },
-      function(response) {
-        if (response && !response.error_code) {
-          // alert('Posting completed.');
-        } else {
-          // alert('Error while posting.');
+    $('.rp-vid-link').on("click", function(event){
+        event.preventDefault();
+        if ($(".bpanel")) {
+          var newString = "<h2>"+$(this).data('title')+"</h2><p class='lead'>"+$(this).data('excerpt')+"</p>";
+          $(".bpanel").html(newString);
+          $(".bpanel").append("<a class='button radius' href='"+$(this).data("link")+"'>See More!</a>");
         }
-      }
-    );
-  });
-  $(".t-share").click(function(e){
-    e.preventDefault();
-    e.stopPropagation();
-    var href = encodeURIComponent($(e.target).data('href'));
-    var url = "https://twitter.com/share?url="+href;
-    var windowName = "Twitter";
-    popupwindow(url, windowName, 400, 400);
-    // window.open(url, windowName, "height=400,width=400");
-  });
-  function popupwindow(url, title, w, h) {
-    var left = (screen.width/2)-(w/2);
-    var top = (screen.height/2)-(h/2);
-    window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
-  }
 
-  Foundation.utils.image_loaded($("li.active img"), function() {
-    $(document).find('.orbit-container ul li:eq(0)').addClass('active');
-    $(document).foundation('orbit', 'reflow');
-    // window.trigger("resize");
-  });
+        $("#bigvid").fadeOut().find("iframe")
+                                    .attr('src', $(this).data("src"))
+                                    .add('#main-vid-link')
+                                    .attr('href', $(this).data('link'))
+                                    .add("#bigvid")
+                                    .fadeIn(800);
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+        return false;
 
-  var iframe = $('#vimeoplayer')[0],
-    player = $f(iframe);
-
-    // When the player is ready, add listeners for pause, finish, and playProgress
-    player.addEvent('ready', function() {
-        player.addEvent('play', onPlay);
-
-        player.addEvent('pause', onPause);
-        player.addEvent('finish', onFinish);
-        player.addEvent('playProgress', onPlayProgress);
     });
 
-    // Call the API when a button is pressed
-    $('button').bind('click', function() {
-        player.api($(this).text().toLowerCase());
+    // console.log($("#vimeoplayer"));
+
+    $(".f-share").click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var href = $(e.target).data('href');
+      // console.log("Clicked FB thing", href);
+      FB.ui(
+        {
+          method: 'share',
+          href: href,
+        },
+        function(response) {
+          if (response && !response.error_code) {
+            // alert('Posting completed.');
+          } else {
+            // alert('Error while posting.');
+          }
+        }
+      );
+    });
+    $(".t-share").click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+      var href = encodeURIComponent($(e.target).data('href'));
+      var url = "https://twitter.com/share?url="+href;
+      var windowName = "Twitter";
+      popupwindow(url, windowName, 400, 400);
+      // window.open(url, windowName, "height=400,width=400");
     });
 
-    function onPlay(id) {
-      console.log("play");
-
-      $("#bigvidcontainer").dimBackground();
+    function popupwindow(url, title, w, h) {
+      var left = (screen.width/2)-(w/2);
+      var top = (screen.height/2)-(h/2);
+      window.open(url, title, 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width='+w+', height='+h+', top='+top+', left='+left);
     }
 
-    function onPause(id) {
-        // console.log("paused");
+    Foundation.utils.image_loaded($("li.active img"), function() {
+      $(document).find('.orbit-container ul li:eq(0)').addClass('active');
+      $(document).foundation('orbit', 'reflow');
+      // window.trigger("resize");
+    });
+
+    if ($("#vimeoplayer:visible")) {
+      $("#lightswitch").click(function() {
         $("#bigvidcontainer").undim();
+      });
+
+      var iframe = $('#vimeoplayer')[0],
+        player = $f(iframe);
+
+        // When the player is ready, add listeners for pause, finish, and playProgress
+        player.addEvent('ready', function() {
+            player.addEvent('play', onPlay);
+
+            player.addEvent('pause', onPause);
+            player.addEvent('finish', onFinish);
+            player.addEvent('playProgress', onPlayProgress);
+        });
+
+        // Call the API when a button is pressed
+        $('button').bind('click', function() {
+            player.api($(this).text().toLowerCase());
+        });
+
+        function onPlay(id) {
+          console.log("play");
+
+          $("#bigvidcontainer").dimBackground({curtainZIndex   : 998});
+        }
+
+        function onPause(id) {
+            // console.log("paused");
+            $("#bigvidcontainer").undim();
+        }
+
+        function onFinish(id) {
+            // console.log('finished');
+            $.undim();
+        }
+
+        function onPlayProgress(data, id) {
+            // status.text(data.seconds + 's played');
+        }
+
+      }
+
     }
 
-    function onFinish(id) {
-        // console.log('finished');
-        $.undim();
-    }
 
-    function onPlayProgress(data, id) {
-        // status.text(data.seconds + 's played');
-    }
+
+
 
 }); /* end of as page load scripts */
 

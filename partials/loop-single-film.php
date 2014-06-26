@@ -13,6 +13,10 @@
 		<div class="large-10 columns large-centered">
 <header class="article-header">
 	<h1 class="entry-title single-title" itemprop="headline"><?php the_title(); ?></h1>
+	<span class="share-links">
+	<i class="fa fa-facebook-square fa-2x f-share" data-href="<?php the_permalink() ?>"></i>
+	<i class="fa fa-twitter fa-2x t-share" data-href="<?php the_permalink() ?>"></i>
+</span>
 	<?php //get_template_part( 'partials/content', 'byline' ); ?>
 	</header> <!-- end article header -->
 			<div class="row">

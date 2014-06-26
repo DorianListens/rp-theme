@@ -1,8 +1,8 @@
 <div class="row">
-  <div class="large-4 columns right">
+  <div class="medium-4 columns right">
     <?php get_template_part( 'partials/loop', 'rp-side' ); ?>
   </div>
-  <div class="large-8 columns">
+  <div class="medium-8 columns">
     <div class="rp-section">
       <div class="row">
         <?php // New Query
@@ -17,7 +17,9 @@
               <div id="bigvid" class='flex-video vimeo widescreen'>
                 <iframe id="vimeoplayer" src="<?php get_video_src(); ?>" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
               </div>
+
               <hr />
+
             </div>
       </div>
       <!-- <div class="row">
@@ -47,8 +49,8 @@
            $film_cats = get_the_terms( get_the_ID(), 'film_cat' );
            $film_types = get_the_terms( get_the_ID(), 'film_type' );
            ?>
-              <div class="large-3 small-6 columns">
-                <a class="rp-vid-link" href="#" data-title="<?php the_title(); ?>" data-src="<?php get_video_src(); ?>" data-link="<?php the_permalink(); ?>" data-excerpt = "<?php the_excerpt(); ?>">
+              <div class="large-3 medium-4 small-6 columns">
+                <a class="rp-vid-link" href="<?php the_permalink(); ?>" data-title="<?php the_title(); ?>" data-src="<?php get_video_src(); ?>" data-link="<?php the_permalink(); ?>" data-excerpt = "<?php the_excerpt(); ?>">
                   <?php if (has_post_thumbnail()) {
 
                   the_post_thumbnail('video_thumb');
