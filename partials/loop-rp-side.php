@@ -20,6 +20,6 @@
     </ul></p>
   <!-- </div> -->
 </div>
-<div class="show-for-medium-up"  id="lightswitch">
+<!-- <div class="show-for-medium-up"  id="lightswitch">
   <i class="fa fa-lightbulb-o fa-4x"></i>
-</div>
+</div> -->

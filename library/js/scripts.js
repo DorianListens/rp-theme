@@ -162,7 +162,7 @@ jQuery(document).ready(function($) {
         function onPlay(id) {
           console.log("play");
 
-          $("#bigvidcontainer").dimBackground({curtainZIndex   : 998});
+          $("#bigvidcontainer").dimBackground({darkness   : 0.85});
         }
 
         function onPause(id) {

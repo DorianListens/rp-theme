@@ -2,7 +2,7 @@
 
 
  #main {
-   background: #adadad;
+   background: #7d7d7d;
    padding-top: 20px;
 
  }
@@ -44,7 +44,7 @@ article.page {
 .header-image {
   min-height: 150px;
   height: 150px;
-  background: url(../images/banner3.jpg);
+  background: url(../images/banner2b.jpg);
   // background: #fff;
   background-size: cover;
   background-repeat: no-repeat;
@@ -55,7 +55,7 @@ article.page {
   min-height: 150px;
   height: 150px;
   padding-top: 45px;
-  background: url(../images/footer3.jpg);
+  background: url(../images/rp-footer-image.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -255,7 +255,7 @@ img#headerlogo {
   @include panel();
 
   border-color: #666;
-  background: #adadad;
+  background: #7d7d7d;
   a {
     color: #000;
   }
@@ -285,14 +285,14 @@ img#headerlogo {
 
 .blog-row {
   @include grid-row();
-  background: #ccc;
+  background: #aaa;
   box-shadow: 2px 2px 2px #666;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
   overflow: hidden;
   &:hover {
-    background: #bbb;
+    background: #999;
     box-shadow: 4px 4px 4px #666;
     img {
       opacity: 0.8;

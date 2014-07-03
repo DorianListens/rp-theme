@@ -8676,7 +8676,7 @@ th.hide-for-touch {
 
 /* line 4, ../scss/_rp_custom.scss */
 #main {
-  background: #adadad;
+  background: #7d7d7d;
   padding-top: 20px;
 }
 
@@ -8731,7 +8731,7 @@ article.page {
 .header-image {
   min-height: 150px;
   height: 150px;
-  background: url(../images/banner3.jpg);
+  background: url(../images/banner2b.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -8741,7 +8741,7 @@ article.page {
   min-height: 150px;
   height: 150px;
   padding-top: 45px;
-  background: url(../images/footer3.jpg);
+  background: url(../images/rp-footer-image.jpg);
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -8969,7 +8969,7 @@ img#headerlogo {
   padding: 1.25rem;
   background: #f2f2f2;
   border-color: #666;
-  background: #adadad;
+  background: #7d7d7d;
 }
 /* line 52, ../scss/foundation/components/_panels.scss */
 .cpanel > :first-child {
@@ -9030,7 +9030,7 @@ img#headerlogo {
   margin-top: 0;
   margin-bottom: 0;
   max-width: 81.25rem;
-  background: #ccc;
+  background: #aaa;
   box-shadow: 2px 2px 2px #666;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -9048,7 +9048,7 @@ img#headerlogo {
 }
 /* line 294, ../scss/_rp_custom.scss */
 .blog-row:hover {
-  background: #bbb;
+  background: #999;
   box-shadow: 4px 4px 4px #666;
 }
 /* line 297, ../scss/_rp_custom.scss */
