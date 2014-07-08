@@ -24,15 +24,18 @@
 
 			    <section class="entry-content clearfix" itemprop="articleBody">
 					<?php the_content(); ?>
-					<a class="button radius rp-vid-link" href="#" data-src="<?php get_video_src();?>">Full Film</a>
+					<a class="button radius rp-vid-link" href="#" data-src="<?php get_video_src();?>"><?php
+					if (function_exists('pll_e')) {
+						pll_e("full film");
+					} else {
+						echo "Full Film";
+					}
+					?></a>
 					<?php related_clips(); ?>
 				</section><!-- end article section -->
 				</div>
 				<div class="large-4 small-12 columns">
-					<div class="panel">
-						<!-- <h4>Film Information</h4> -->
-						<?php display_film_info(); ?>
-					</div>
+					<?php display_film_info(); ?>
 				</div>
 			</div>
 		</div>

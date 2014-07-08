@@ -9008,7 +9008,7 @@ img#headerlogo {
   /* line 271, ../scss/_rp_custom.scss */
   .top-bar .menu-item a {
     font-size: 1.5625rem;
-    padding: 0 50px !important;
+    padding: 0 40px !important;
   }
   /* line 275, ../scss/_rp_custom.scss */
   .top-bar .menu-item.lang-item a {
@@ -9091,12 +9091,17 @@ a.article-link {
   text-shadow: 1px 1px 1px #000;
 }
 
-/* line 329, ../scss/_rp_custom.scss */
+/* line 330, ../scss/_rp_custom.scss */
+.article-header > h2 {
+  margin-top: 30px;
+}
+
+/* line 333, ../scss/_rp_custom.scss */
 .single-title {
   display: inline-block;
 }
 
-/* line 333, ../scss/_rp_custom.scss */
+/* line 337, ../scss/_rp_custom.scss */
 #lightswitch {
   z-index: 999;
   position: absolute;

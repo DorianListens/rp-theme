@@ -80,7 +80,7 @@ jQuery(document).ready(function($) {
         if ($(".bpanel")) {
           var newString = "<h2>"+$(this).data('title')+"</h2><p class='lead'>"+$(this).data('excerpt')+"</p>";
           $(".bpanel").html(newString);
-          $(".bpanel").append("<a class='button radius' href='"+$(this).data("link")+"'>See More!</a>");
+          $(".bpanel").append("<a class='button radius' href='"+$(this).data("link")+"'>"+$(this).data("button")+"!</a>");
         }
 
         $("#bigvid").fadeOut().find("iframe")

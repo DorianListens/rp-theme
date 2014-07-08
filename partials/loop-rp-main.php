@@ -22,12 +22,6 @@
 
             </div>
       </div>
-      <!-- <div class="row">
-        <div class="large-12 columns">
-          <p><a id="main-vid-link" href="<?php the_permalink(); ?>" class="right">More About This Film</a></p>
-          <br />
-        </div>
-      </div> -->
     </div>
   </div>
 
@@ -47,10 +41,16 @@
           <?php while ($counter < 5) :
             // Get the terms
            $film_cats = get_the_terms( get_the_ID(), 'film_cat' );
-           $film_types = get_the_terms( get_the_ID(), 'film_type' );
+          //  $film_types = get_the_terms( get_the_ID(), 'film_type' );
            ?>
               <div class="large-3 medium-4 small-6 columns">
-                <a class="rp-vid-link" href="<?php the_permalink(); ?>" data-title="<?php the_title(); ?>" data-src="<?php get_video_src(); ?>" data-link="<?php the_permalink(); ?>" data-excerpt = "<?php the_excerpt(); ?>">
+                <a class="rp-vid-link"
+                href="<?php the_permalink(); ?>"
+                data-title="<?php the_title(); ?>"
+                data-src="<?php get_video_src(); ?>"
+                data-link="<?php the_permalink(); ?>"
+                data-excerpt = "<?php the_excerpt(); ?>"
+                data-button = "<?php rp_button_text(); ?>">
                   <?php if (has_post_thumbnail()) {
 
                   the_post_thumbnail('video_thumb');

@@ -37,11 +37,26 @@ function display_video() {
 function display_film_info() {
 	if (get_field('credits')) {
 		$credits = get_field('credits');
-	} else { $credits = "Sorry, no credits have been added."; }
+		$display = true;
+	} else {
+		if (function_exists('pll__')) {
+			$credits = pll__("sorry"); 
+		} else {
+			$credits = "Sorry, no credits have been added.";
+		}
+	}
 
 	if (get_field('running_time')) {
 		$running_time = get_field('running_time');
-	} else { $running_time = "Not Available"; }
+		$display = true;
+	} else {
+		if (function_exists('pll__')) {
+			$running_time = pll__("not available");
+		}
+		else {
+			$running_time = "Not Available";
+		}
+	}
 
 	if (get_field('official_website')) {
 		$official_website = get_field('official_website');
@@ -53,16 +68,47 @@ function display_film_info() {
 		$website_link = '<a href="'.$official_website.'" target="blank">'.$official_website.'</a>';
 	}
 
-	echo '<h4>Official Website:</h4> <p>'.$website_link.'</p>';
-	echo "<h4>Credits:</h4> <p>", $credits, "</p>";
-	echo '<h4>Running Time:</h4> <p>', $running_time, "</p>";
+	if (function_exists('pll__')) {
+	$siteString = pll__("official website");
+	$creditString = pll__("credits");
+	$runString = pll__("running time");
+} else {
+	$siteString = "Official Website";
+	$creditString = "Credits";
+	$runString = "Running Time";
+}
+
+ if ($display) {
+	echo '<div class="panel">';
+	echo '<h4>'.$siteString.':</h4> <p>'.$website_link.'</p>';
+	echo "<h4>".$creditString.":</h4> <p>", $credits, "</p>";
+	echo '<h4>'.$runString.':</h4> <p>', $running_time, "</p>";
+	echo '</div>';
+	}
+
+
+}
+
+function rp_button_text() {
+
+	if (function_exists('pll_e')) {
+		pll_e("see more");
+	} else {
+		echo "See More";
+	}
 
 }
 
 function related_clips() {
 	if( have_rows('related_clips') ):
 		$i = 0;
-		echo "<h4>Related Clips:</h4>";
+		echo "<h4>";
+		if (function_exists('pll_e')) {
+			pll_e("related clips");
+		} else {
+			echo "Related Clips";
+		}
+		echo ":</h4>";
 
 	 	// loop through the rows of data
 	    while ( have_rows('related_clips') ) : the_row();

@@ -250,6 +250,21 @@ add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 // add_filter( 'excerpt_more', 'new_excerpt_more' );
 
 
+// STRING TRANSLATIONS
+
+if (function_exists('pll_register_string')) {
+	pll_register_string("recent news", "recent news", "RP-theme");
+	pll_register_string("filters", "filters", "RP-theme");
+	pll_register_string("full film", "full film", "RP-theme");
+	pll_register_string("related clips", "related clips", "RP-theme");
+	pll_register_string("official website", "official website", "RP-theme");
+	pll_register_string("credits", "credits", "RP-theme");
+	pll_register_string("running time", "running time", "RP-theme");
+	pll_register_string("see more", "see more", "RP-theme");
+	pll_register_string("sorry", "sorry", "RP-theme");
+	pll_register_string("not available", "not available", "RP-theme");
+}
+
 
 
 ?>

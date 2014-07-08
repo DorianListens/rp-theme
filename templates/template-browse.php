@@ -31,7 +31,13 @@ Template Name: Rotating Planet Browse Page
 					    	<div class="large-12 columns">
 
 									<dl id="filter" class="sub-nav">
-									  <dt>Filter:</dt>
+									  <dt><?php
+										if (function_exists('pll_e')) {
+											pll_e("filters");
+										} else {
+											echo "Filters";
+										}
+										?>:</dt>
 									  <dd class="active"><a href="#" class="active" data-filter="*"><span>All</span></a></dd>
 									  <?php foreach ($film_cats as $cat ) : ?>
 											<dd><a href="#" data-filter=".<?php echo $cat->slug; ?>"><span><?php echo $cat->name; ?></span></a></dd>

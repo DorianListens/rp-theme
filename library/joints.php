@@ -143,13 +143,13 @@ function joints_scripts_and_styles() {
     if ( is_singular() AND comments_open() AND (get_option('thread_comments') == 1)) {
       wp_enqueue_script( 'comment-reply' );
     }
-    if (is_page('browse')) {
-                wp_register_script('isotope', get_template_directory_uri().'/library/js/isotope.pkgd.min.js',false, null);
-                wp_enqueue_script( 'isotope' );
-                wp_register_script('isotope-init', get_template_directory_uri().'/library/js/rp-isotope-init.js',false, null);
-                wp_enqueue_script( 'isotope-init' );
+    // if (is_page('browse')) {
+    wp_register_script('isotope', get_template_directory_uri().'/library/js/isotope.pkgd.min.js',false, null);
+    wp_enqueue_script( 'isotope' );
+    wp_register_script('isotope-init', get_template_directory_uri().'/library/js/rp-isotope-init.js',false, null);
+    wp_enqueue_script( 'isotope-init' );
 
-            }
+            // }
 
     //adding scripts file in the footer
     wp_enqueue_script( 'joints-js', get_template_directory_uri() . '/library/js/scripts.js', array( 'jquery' ), '', true );

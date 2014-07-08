@@ -270,7 +270,7 @@ img#headerlogo {
   @media only screen and (min-width: 40.063em) {
     a {
     font-size: rem-calc(25);
-    padding: 0 50px!important;
+    padding: 0 40px!important;
     }
     &.lang-item a {
       padding: 0 10px!important;
@@ -325,6 +325,10 @@ footer.article-footer {
 }
 a.article-link {
   text-shadow: 1px 1px 1px #000;
+}
+
+.article-header > h2 {
+  margin-top:30px;
 }
 .single-title {
   display: inline-block;
